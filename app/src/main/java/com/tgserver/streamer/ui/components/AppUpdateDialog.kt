@@ -116,7 +116,7 @@ fun AppUpdateBanner(
             .clip(RoundedCornerShape(16.dp))
             .background(
                 Brush.verticalGradient(
-                    listOf(Color(0xFF14191E), Color(0xFF0F1215))
+                    listOf(Color(0xFF1C1616), Color(0xFF141010))
                 )
             )
             .border(
@@ -211,7 +211,7 @@ fun AppUpdateBanner(
                             .height(6.dp)
                             .clip(RoundedCornerShape(3.dp)),
                         color = Color(0xFF34C759),
-                        trackColor = Color(0xFF26262E)
+                        trackColor = Color(0xFF2E2626)
                     )
                     Row(
                         modifier = Modifier.fillMaxWidth(),
@@ -300,7 +300,7 @@ fun AppUpdateDialog(
                 modifier = Modifier
                     .fillMaxWidth(0.92f)
                     .clip(RoundedCornerShape(26.dp))
-                    .background(Color(0xFF111216))
+                    .background(Color(0xFF151212))
                     .border(BorderStroke(1.dp, Color(0xFF2E3038)), RoundedCornerShape(26.dp))
                     .padding(22.dp)
             ) {
@@ -365,7 +365,7 @@ fun AppUpdateDialog(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(12.dp))
-                        .background(Color(0xFF191B22))
+                        .background(Color(0xFF201B1B))
                         .padding(horizontal = 14.dp, vertical = 10.dp),
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
@@ -409,8 +409,8 @@ fun AppUpdateDialog(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(14.dp))
-                            .background(Color(0xFF0C0D10))
-                            .border(BorderStroke(1.dp, Color(0xFF1F2128)), RoundedCornerShape(14.dp))
+                            .background(Color(0xFF0F0D0D))
+                            .border(BorderStroke(1.dp, Color(0xFF272020)), RoundedCornerShape(14.dp))
                             .padding(14.dp),
                         verticalArrangement = Arrangement.spacedBy(6.dp)
                     ) {
@@ -448,7 +448,7 @@ fun AppUpdateDialog(
                                 .height(8.dp)
                                 .clip(RoundedCornerShape(4.dp)),
                             color = Color(0xFF34C759),
-                            trackColor = Color(0xFF26262E)
+                            trackColor = Color(0xFF2E2626)
                         )
                         Row(
                             modifier = Modifier.fillMaxWidth(),

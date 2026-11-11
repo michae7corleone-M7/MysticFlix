@@ -11,7 +11,7 @@ enum class ChangeCategory(
     NEW("New Features", 0xFF22C55E),       // Vibrant Green
     IMPROVEMENT("Improvements", 0xFF38BDF8), // Cyan / Sky Blue
     FIX("Bug Fixes", 0xFFF59E0B),           // Amber
-    CHANGE("Changes", 0xFFA855F7)           // Modern Purple
+    CHANGE("Changes", 0xFFFB515B)           // Modern Purple
 }
 
 /**

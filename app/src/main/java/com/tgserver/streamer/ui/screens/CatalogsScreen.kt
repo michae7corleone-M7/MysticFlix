@@ -132,7 +132,7 @@ fun CatalogsScreen(viewModel: MainAppViewModel) {
                                 modifier = Modifier
                                     .size(36.dp)
                                     .clip(CircleShape)
-                                    .background(Color(0xFF1E1F24))
+                                    .background(Color(0xFF241E1E))
                                     .clickable {
                                         isMultiSelectMode = false
                                         selectedCatalogIds = emptySet()
@@ -168,7 +168,7 @@ fun CatalogsScreen(viewModel: MainAppViewModel) {
                         ) {
                             Text(
                                 text = if (selectedCatalogIds.size == displayedCatalogs.size) "Clear" else "Select All",
-                                color = Color(0xFFA855F7),
+                                color = Color(0xFFFB515B),
                                 fontFamily = NdotFont,
                                 fontSize = 11.5.sp
                             )
@@ -214,7 +214,7 @@ fun CatalogsScreen(viewModel: MainAppViewModel) {
                                 modifier = Modifier
                                     .size(36.dp)
                                     .clip(CircleShape)
-                                    .background(Color(0xFF1E1F24))
+                                    .background(Color(0xFF241E1E))
                                     .clickable {
                                         haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                                         isMultiSelectMode = true
@@ -234,7 +234,7 @@ fun CatalogsScreen(viewModel: MainAppViewModel) {
                                 modifier = Modifier
                                     .height(36.dp)
                                     .clip(CircleShape)
-                                    .background(Color(0xFFA855F7))
+                                    .background(Color(0xFFFB515B))
                                     .clickable {
                                         haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                                         showAddCatalogSheet = true
@@ -278,10 +278,10 @@ fun CatalogsScreen(viewModel: MainAppViewModel) {
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(14.dp),
                     colors = OutlinedTextFieldDefaults.colors(
-                        focusedContainerColor = Color(0xFF16171B),
-                        unfocusedContainerColor = Color(0xFF16171B),
-                        focusedBorderColor = Color(0xFFA855F7),
-                        unfocusedBorderColor = Color(0xFF282A31),
+                        focusedContainerColor = Color(0xFF1B1616),
+                        unfocusedContainerColor = Color(0xFF1B1616),
+                        focusedBorderColor = Color(0xFFFB515B),
+                        unfocusedBorderColor = Color(0xFF312828),
                         focusedTextColor = Color.White,
                         unfocusedTextColor = Color.White
                     ),
@@ -414,7 +414,7 @@ fun CatalogsScreen(viewModel: MainAppViewModel) {
             Row(
                 modifier = Modifier
                     .clip(RoundedCornerShape(26.dp))
-                    .background(Color(0xF0181A22))
+                    .background(Color(0xF0201A1A))
                     .border(BorderStroke(1.dp, Color(0xFF383C4D)), RoundedCornerShape(26.dp))
                     .padding(horizontal = 18.dp, vertical = 10.dp),
                 horizontalArrangement = Arrangement.spacedBy(16.dp),
@@ -515,7 +515,7 @@ fun CatalogsScreen(viewModel: MainAppViewModel) {
                     Text("Cancel", color = Color(0xFF9CA3AF), fontSize = 12.5.sp)
                 }
             },
-            containerColor = Color(0xFF1E1F24),
+            containerColor = Color(0xFF241E1E),
             shape = RoundedCornerShape(20.dp)
         )
     }
@@ -555,9 +555,9 @@ private fun CatalogItemCard(
             .border(
                 BorderStroke(
                     1.dp,
-                    if (isSelected) Color(0xFFA855F7)
-                    else if (catalog.isAiPowered) Color(0xFF6D28D9).copy(alpha = 0.5f)
-                    else Color(0xFF282A31)
+                    if (isSelected) Color(0xFFFB515B)
+                    else if (catalog.isAiPowered) Color(0xFFDD242F).copy(alpha = 0.5f)
+                    else Color(0xFF312828)
                 ),
                 shape = RoundedCornerShape(18.dp)
             )
@@ -569,9 +569,9 @@ private fun CatalogItemCard(
             ),
         shape = RoundedCornerShape(18.dp),
         colors = CardDefaults.cardColors(
-            containerColor = if (catalog.isHidden) Color(0xFF121316)
-            else if (catalog.isAiPowered) Color(0xFF161420)
-            else Color(0xFF18191E)
+            containerColor = if (catalog.isHidden) Color(0xFF161212)
+            else if (catalog.isAiPowered) Color(0xFF1D1717)
+            else Color(0xFF1E1818)
         )
     ) {
         Column(
@@ -596,7 +596,7 @@ private fun CatalogItemCard(
                             checked = isSelected,
                             onCheckedChange = { onToggleSelect() },
                             colors = CheckboxDefaults.colors(
-                                checkedColor = Color(0xFFA855F7),
+                                checkedColor = Color(0xFFFB515B),
                                 uncheckedColor = Color(0xFF6B7280)
                             ),
                             modifier = Modifier.size(24.dp)
@@ -609,15 +609,15 @@ private fun CatalogItemCard(
                             .size(32.dp)
                             .clip(CircleShape)
                             .background(
-                                if (catalog.isAiPowered) Color(0xFFA855F7).copy(alpha = 0.2f)
-                                else Color(0xFF242630)
+                                if (catalog.isAiPowered) Color(0xFFFB515B).copy(alpha = 0.2f)
+                                else Color(0xFF2E2626)
                             ),
                         contentAlignment = Alignment.Center
                     ) {
                         Icon(
                             imageVector = if (catalog.isAiPowered) Icons.Default.AutoAwesome else Icons.Default.FolderSpecial,
                             contentDescription = null,
-                            tint = if (catalog.isAiPowered) Color(0xFFA855F7) else Color(0xFFD1D5DB),
+                            tint = if (catalog.isAiPowered) Color(0xFFFB515B) else Color(0xFFD1D5DB),
                             modifier = Modifier.size(16.dp)
                         )
                     }
@@ -640,7 +640,7 @@ private fun CatalogItemCard(
                                 Box(
                                     modifier = Modifier
                                         .clip(RoundedCornerShape(4.dp))
-                                        .background(Color(0xFF282A31))
+                                        .background(Color(0xFF312828))
                                         .padding(horizontal = 5.dp, vertical = 2.dp)
                                 ) {
                                     Text("Hidden", color = Color(0xFF9CA3AF), fontSize = 9.sp)
@@ -693,7 +693,7 @@ private fun CatalogItemCard(
                         Icon(
                             imageVector = Icons.Default.PushPin,
                             contentDescription = "Pin to Home",
-                            tint = if (catalog.pinToHome) Color(0xFFA855F7) else Color(0xFF555966),
+                            tint = if (catalog.pinToHome) Color(0xFFFB515B) else Color(0xFF555966),
                             modifier = Modifier.size(16.dp)
                         )
                     }
@@ -714,7 +714,7 @@ private fun CatalogItemCard(
                 Box(
                     modifier = Modifier
                         .clip(RoundedCornerShape(8.dp))
-                        .background(Color(0xFF22242C))
+                        .background(Color(0xFF2B2323))
                         .padding(horizontal = 8.dp, vertical = 4.dp)
                 ) {
                     Text(
@@ -728,7 +728,7 @@ private fun CatalogItemCard(
                 if (catalog.pinToHome) {
                     Text(
                         text = "Pinned on Home",
-                        color = Color(0xFFA855F7),
+                        color = Color(0xFFFB515B),
                         fontSize = 10.sp,
                         fontWeight = FontWeight.Medium
                     )

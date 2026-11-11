@@ -141,7 +141,7 @@ fun TelegramLoginScreen(viewModel: MainAppViewModel) {
                     )
 
                     Text(
-                        text = "NoxMedia",
+                        text = "MysticFlix",
                         color = Color.White,
                         fontSize = 20.sp,
                         fontFamily = NdotFont,
@@ -285,7 +285,7 @@ fun TelegramLoginScreen(viewModel: MainAppViewModel) {
                     // TAB 0: IN-APP DIRECT
                     val tab0Active = selectedAuthMode == 0
                     val tab0Bg by animateColorAsState(
-                        targetValue = if (tab0Active) Color(0xFF26262E) else Color.Transparent,
+                        targetValue = if (tab0Active) Color(0xFF2E2626) else Color.Transparent,
                         animationSpec = tween(220, easing = FastOutSlowInEasing),
                         label = "tab0_bg"
                     )
@@ -325,7 +325,7 @@ fun TelegramLoginScreen(viewModel: MainAppViewModel) {
                     // TAB 1: SESSION STRING / COLAB
                     val tab1Active = selectedAuthMode == 1
                     val tab1Bg by animateColorAsState(
-                        targetValue = if (tab1Active) Color(0xFF26262E) else Color.Transparent,
+                        targetValue = if (tab1Active) Color(0xFF2E2626) else Color.Transparent,
                         animationSpec = tween(220, easing = FastOutSlowInEasing),
                         label = "tab1_bg"
                     )
@@ -955,7 +955,7 @@ fun TelegramLoginScreen(viewModel: MainAppViewModel) {
                                         .weight(1f)
                                         .height(34.dp)
                                         .clip(CircleShape)
-                                        .background(if (selectedGuideTab == 0) Color(0xFF26262E) else Color.Transparent)
+                                        .background(if (selectedGuideTab == 0) Color(0xFF2E2626) else Color.Transparent)
                                         .clickable { selectedGuideTab = 0 }
                                 ) {
                                     Text(
@@ -972,7 +972,7 @@ fun TelegramLoginScreen(viewModel: MainAppViewModel) {
                                         .weight(1f)
                                         .height(34.dp)
                                         .clip(CircleShape)
-                                        .background(if (selectedGuideTab == 1) Color(0xFF26262E) else Color.Transparent)
+                                        .background(if (selectedGuideTab == 1) Color(0xFF2E2626) else Color.Transparent)
                                         .clickable { selectedGuideTab = 1 }
                                 ) {
                                     Text(

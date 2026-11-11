@@ -86,6 +86,7 @@ class AppUpdateManager(private val context: Context) {
 
     companion object {
         private const val TAG = "AppUpdateManager"
+        private const val UPDATES_DISABLED = true
         private const val GITHUB_OWNER = "TheAceOfficials"
         private const val GITHUB_REPO = "NoxMedia"
         private const val RELEASES_API_URL = "https://api.github.com/repos/$GITHUB_OWNER/$GITHUB_REPO/releases/latest"
@@ -156,6 +157,7 @@ class AppUpdateManager(private val context: Context) {
      * Strictly checks for beta releases ONLY if includeBeta is true.
      */
     suspend fun checkForUpdate(manual: Boolean = false, includeBeta: Boolean = false): Boolean = withContext(Dispatchers.IO) {
+        if (UPDATES_DISABLED) return@withContext false
         if (!manual && _updateState.value is UpdateUiState.Downloading) {
             return@withContext false
         }

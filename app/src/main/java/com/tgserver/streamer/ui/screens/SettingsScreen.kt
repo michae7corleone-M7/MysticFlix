@@ -189,7 +189,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                     letterSpacing = 0.5.sp
                 )
                 Text(
-                    text = "NoxMedia • Preferences",
+                    text = "MysticFlix • Preferences",
                     color = Color(0xFF6B7280),
                     fontFamily = FontFamily.Monospace,
                     fontSize = 10.5.sp,
@@ -202,9 +202,9 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .clip(RoundedCornerShape(20.dp))
-                    .border(BorderStroke(1.dp, Color(0xFF22242D)), RoundedCornerShape(20.dp)),
+                    .border(BorderStroke(1.dp, Color(0xFF2B2424)), RoundedCornerShape(20.dp)),
                 shape = RoundedCornerShape(20.dp),
-                colors = CardDefaults.cardColors(containerColor = Color(0xFF14151B))
+                colors = CardDefaults.cardColors(containerColor = Color(0xFF1A1515))
             ) {
                 Column(modifier = Modifier.fillMaxWidth()) {
                     Row(
@@ -226,7 +226,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                                 modifier = Modifier
                                     .size(52.dp)
                                     .clip(CircleShape)
-                                    .background(Color(0xFF1B1D25))
+                                    .background(Color(0xFF231D1D))
                                     .border(1.dp, Color(0xFF2E313D), CircleShape)
                             ) {
                                 val avatarBitmap = remember(session.avatarUrl) {
@@ -306,7 +306,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                                 .padding(start = 16.dp, end = 16.dp, bottom = 14.dp)
                         ) {
                             HorizontalDivider(
-                                color = Color(0xFF22242D),
+                                color = Color(0xFF2B2424),
                                 thickness = 0.5.dp,
                                 modifier = Modifier.padding(bottom = 12.dp)
                             )
@@ -359,7 +359,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                             )
 
                             HorizontalDivider(
-                                color = Color(0xFF22242D),
+                                color = Color(0xFF2B2424),
                                 thickness = 0.5.dp,
                                 modifier = Modifier.padding(vertical = 10.dp)
                             )
@@ -428,7 +428,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                                 .weight(1f)
                                 .height(36.dp)
                                 .clip(RoundedCornerShape(9.dp))
-                                .background(if (isSelected) Color(0xFFFFFFFF) else Color(0xFF1B1D25))
+                                .background(if (isSelected) Color(0xFFFFFFFF) else Color(0xFF231D1D))
                                 .border(1.dp, if (isSelected) Color.Transparent else Color(0xFF2C2F3A), RoundedCornerShape(9.dp))
                                 .clickable {
                                     selectedQuality = q
@@ -437,7 +437,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                         ) {
                             Text(
                                 text = q,
-                                color = if (isSelected) Color(0xFF070709) else TextSecondary,
+                                color = if (isSelected) Color(0xFF090707) else TextSecondary,
                                 fontSize = 11.5.sp,
                                 fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium
                             )
@@ -446,7 +446,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                 }
 
                 Spacer(modifier = Modifier.height(14.dp))
-                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF22242D)))
+                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF2B2424)))
                 Spacer(modifier = Modifier.height(14.dp))
 
                 SettingToggleRow(
@@ -481,8 +481,8 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(14.dp))
-                            .background(Color(0xFF161820))
-                            .border(1.dp, Color(0xFF242732), RoundedCornerShape(14.dp))
+                            .background(Color(0xFF1E1818))
+                            .border(1.dp, Color(0xFF2F2727), RoundedCornerShape(14.dp))
                             .padding(horizontal = 14.dp, vertical = 12.dp),
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
@@ -566,8 +566,8 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(14.dp))
-                            .background(Color(0xFF161820))
-                            .border(1.dp, Color(0xFF242732), RoundedCornerShape(14.dp))
+                            .background(Color(0xFF1E1818))
+                            .border(1.dp, Color(0xFF2F2727), RoundedCornerShape(14.dp))
                             .padding(horizontal = 14.dp, vertical = 12.dp),
                         verticalArrangement = Arrangement.spacedBy(8.dp)
                     ) {
@@ -651,8 +651,8 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(12.dp))
-                        .background(Color(0xFF161820))
-                        .border(1.dp, Color(0xFF242732), RoundedCornerShape(12.dp))
+                        .background(Color(0xFF1E1818))
+                        .border(1.dp, Color(0xFF2F2727), RoundedCornerShape(12.dp))
                         .padding(horizontal = 12.dp, vertical = 10.dp),
                     verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
@@ -687,12 +687,12 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                         // Pill indicating active mode
                         Surface(
                             shape = RoundedCornerShape(4.dp),
-                            color = if (config.animeMetadataPreference == "kitsu") Color(0x22F59E0B) else Color(0x22A855F7),
-                            border = BorderStroke(0.5.dp, if (config.animeMetadataPreference == "kitsu") Color(0x40F59E0B) else Color(0x40A855F7))
+                            color = if (config.animeMetadataPreference == "kitsu") Color(0x22F59E0B) else Color(0x22FB515B),
+                            border = BorderStroke(0.5.dp, if (config.animeMetadataPreference == "kitsu") Color(0x40F59E0B) else Color(0x40FB515B))
                         ) {
                             Text(
                                 text = if (config.animeMetadataPreference == "kitsu") "ABSOLUTE" else "SEASONAL",
-                                color = if (config.animeMetadataPreference == "kitsu") Color(0xFFFBBF24) else Color(0xFFC084FC),
+                                color = if (config.animeMetadataPreference == "kitsu") Color(0xFFFBBF24) else Color(0xFFFF8087),
                                 fontSize = 9.5.sp,
                                 fontWeight = FontWeight.Bold,
                                 letterSpacing = 0.5.sp,
@@ -711,8 +711,8 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .clip(RoundedCornerShape(8.dp))
-                                .background(Color(0xFF101217))
-                                .border(1.dp, Color(0xFF1F222B), RoundedCornerShape(8.dp))
+                                .background(Color(0xFF151212))
+                                .border(1.dp, Color(0xFF292121), RoundedCornerShape(8.dp))
                                 .padding(horizontal = 10.dp, vertical = 9.dp)
                         ) {
                             Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
@@ -748,11 +748,11 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                                 .fillMaxHeight()
                                 .clip(RoundedCornerShape(10.dp))
                                 .background(
-                                    if (isSeasonal) Color(0x22A855F7) else Color(0xFF101217)
+                                    if (isSeasonal) Color(0x22FB515B) else Color(0xFF151212)
                                 )
                                 .border(
                                     width = if (isSeasonal) 1.5.dp else 1.dp,
-                                    color = if (isSeasonal) Color(0xFFA855F7) else Color(0xFF222530),
+                                    color = if (isSeasonal) Color(0xFFFB515B) else Color(0xFF2D2525),
                                     shape = RoundedCornerShape(10.dp)
                                 )
                                 .clickable {
@@ -779,7 +779,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                                         modifier = Modifier
                                             .size(7.dp)
                                             .background(
-                                                if (isSeasonal) Color(0xFFC084FC) else Color(0xFF2E3240),
+                                                if (isSeasonal) Color(0xFFFF8087) else Color(0xFF2E3240),
                                                 CircleShape
                                             )
                                     )
@@ -787,13 +787,13 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                                 Spacer(modifier = Modifier.height(4.dp))
                                 Text(
                                     text = "TVDB / TMDB",
-                                    color = if (isSeasonal) Color(0xFFC084FC) else Color(0xFF64748B),
+                                    color = if (isSeasonal) Color(0xFFFF8087) else Color(0xFF64748B),
                                     fontSize = 10.sp,
                                     fontWeight = FontWeight.SemiBold
                                 )
                                 Text(
                                     text = "Best for Nuvio & S2+ play",
-                                    color = if (isSeasonal) Color(0xFFD8B4FE) else Color(0xFF64748B),
+                                    color = if (isSeasonal) Color(0xFFFF8087) else Color(0xFF64748B),
                                     fontSize = 9.sp,
                                     lineHeight = 12.sp
                                 )
@@ -807,11 +807,11 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                                 .fillMaxHeight()
                                 .clip(RoundedCornerShape(10.dp))
                                 .background(
-                                    if (!isSeasonal) Color(0x22F59E0B) else Color(0xFF101217)
+                                    if (!isSeasonal) Color(0x22F59E0B) else Color(0xFF151212)
                                 )
                                 .border(
                                     width = if (!isSeasonal) 1.5.dp else 1.dp,
-                                    color = if (!isSeasonal) Color(0xFFF59E0B) else Color(0xFF222530),
+                                    color = if (!isSeasonal) Color(0xFFF59E0B) else Color(0xFF2D2525),
                                     shape = RoundedCornerShape(10.dp)
                                 )
                                 .clickable {
@@ -868,8 +868,8 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(12.dp))
-                        .background(Color(0xFF161820))
-                        .border(1.dp, Color(0xFF242732), RoundedCornerShape(12.dp))
+                        .background(Color(0xFF1E1818))
+                        .border(1.dp, Color(0xFF2F2727), RoundedCornerShape(12.dp))
                         .padding(horizontal = 12.dp, vertical = 10.dp),
                     verticalArrangement = Arrangement.spacedBy(6.dp)
                 ) {
@@ -952,8 +952,8 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(12.dp))
-                            .background(Color(0xFF161820))
-                            .border(1.dp, Color(0xFF242732), RoundedCornerShape(12.dp))
+                            .background(Color(0xFF1E1818))
+                            .border(1.dp, Color(0xFF2F2727), RoundedCornerShape(12.dp))
                             .padding(4.dp),
                         horizontalArrangement = Arrangement.spacedBy(4.dp)
                     ) {
@@ -963,7 +963,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                                 modifier = Modifier
                                     .weight(1f)
                                     .clip(RoundedCornerShape(8.dp))
-                                    .background(if (isSel) Color(0xFFA855F7) else Color.Transparent)
+                                    .background(if (isSel) Color(0xFFFB515B) else Color.Transparent)
                                     .clickable {
                                         haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
                                         aiProviderInput = provId
@@ -1158,8 +1158,8 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                             .fillMaxWidth()
                             .padding(top = 4.dp, bottom = 6.dp)
                             .clip(RoundedCornerShape(8.dp))
-                            .background(Color(0xFF161820))
-                            .border(1.dp, Color(0xFF242732), RoundedCornerShape(8.dp))
+                            .background(Color(0xFF1E1818))
+                            .border(1.dp, Color(0xFF2F2727), RoundedCornerShape(8.dp))
                             .padding(horizontal = 10.dp, vertical = 8.dp)
                     ) {
                         Text(
@@ -1251,8 +1251,8 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                             .fillMaxWidth()
                             .padding(top = 4.dp, bottom = 6.dp)
                             .clip(RoundedCornerShape(8.dp))
-                            .background(Color(0xFF161820))
-                            .border(1.dp, Color(0xFF242732), RoundedCornerShape(8.dp))
+                            .background(Color(0xFF1E1818))
+                            .border(1.dp, Color(0xFF2F2727), RoundedCornerShape(8.dp))
                             .padding(horizontal = 10.dp, vertical = 8.dp)
                     ) {
                         Text(
@@ -1354,7 +1354,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                 }
 
                 Spacer(modifier = Modifier.height(14.dp))
-                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF22242D)))
+                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF2B2424)))
                 Spacer(modifier = Modifier.height(14.dp))
 
                 // Remote Access URL Header
@@ -1401,8 +1401,8 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                             .fillMaxWidth()
                             .padding(top = 4.dp, bottom = 6.dp)
                             .clip(RoundedCornerShape(8.dp))
-                            .background(Color(0xFF161820))
-                            .border(1.dp, Color(0xFF242732), RoundedCornerShape(8.dp))
+                            .background(Color(0xFF1E1818))
+                            .border(1.dp, Color(0xFF2F2727), RoundedCornerShape(8.dp))
                             .padding(horizontal = 10.dp, vertical = 8.dp)
                     ) {
                         Text(
@@ -1489,7 +1489,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                 }
 
                 Spacer(modifier = Modifier.height(14.dp))
-                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF22242D)))
+                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF2B2424)))
                 Spacer(modifier = Modifier.height(14.dp))
 
                 // Start on Boot
@@ -1501,7 +1501,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                 )
 
                 Spacer(modifier = Modifier.height(14.dp))
-                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF22242D)))
+                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF2B2424)))
                 Spacer(modifier = Modifier.height(14.dp))
 
                 // Screen-Off Streaming Mode Row
@@ -1559,7 +1559,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                 )
 
                 Spacer(modifier = Modifier.height(14.dp))
-                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF22242D)))
+                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF2B2424)))
                 Spacer(modifier = Modifier.height(14.dp))
 
                 // Auto Sleep Server
@@ -1761,7 +1761,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                 )
 
                 Spacer(modifier = Modifier.height(12.dp))
-                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF22242D)))
+                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF2B2424)))
                 Spacer(modifier = Modifier.height(12.dp))
 
                 // 2. Dead Entries
@@ -1825,7 +1825,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                                         .height(3.dp)
                                         .clip(CircleShape),
                                     color = AccentYellow,
-                                    trackColor = Color(0xFF282A36)
+                                    trackColor = Color(0xFF342A2A)
                                 )
                             }
                         }
@@ -1862,7 +1862,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                 )
 
                 Spacer(modifier = Modifier.height(12.dp))
-                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF22242D)))
+                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF2B2424)))
                 Spacer(modifier = Modifier.height(12.dp))
 
                 // 3. Clear Cache
@@ -1885,7 +1885,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                 )
 
                 Spacer(modifier = Modifier.height(12.dp))
-                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF22242D)))
+                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF2B2424)))
                 Spacer(modifier = Modifier.height(12.dp))
 
                 // 4. Diagnostic Logs Screen
@@ -1923,7 +1923,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                 )
 
                 Spacer(modifier = Modifier.height(12.dp))
-                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF22242D)))
+                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF2B2424)))
                 Spacer(modifier = Modifier.height(12.dp))
 
                 SettingToggleRow(
@@ -1937,7 +1937,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                 )
 
                 Spacer(modifier = Modifier.height(12.dp))
-                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF22242D)))
+                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF2B2424)))
                 Spacer(modifier = Modifier.height(12.dp))
 
                 SettingToggleRow(
@@ -1951,7 +1951,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                 )
 
                 Spacer(modifier = Modifier.height(12.dp))
-                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF22242D)))
+                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF2B2424)))
                 Spacer(modifier = Modifier.height(12.dp))
 
                 // Alexa Voice Control
@@ -2013,8 +2013,8 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                             .fillMaxWidth()
                             .padding(top = 8.dp)
                             .clip(RoundedCornerShape(8.dp))
-                            .background(Color(0xFF161820))
-                            .border(1.dp, Color(0xFF242732), RoundedCornerShape(8.dp))
+                            .background(Color(0xFF1E1818))
+                            .border(1.dp, Color(0xFF2F2727), RoundedCornerShape(8.dp))
                             .padding(horizontal = 12.dp, vertical = 10.dp)
                     ) {
                         Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
@@ -2102,8 +2102,8 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .clip(RoundedCornerShape(8.dp))
-                                .background(Color(0xFF101217))
-                                .border(1.dp, Color(0xFF1F222B), RoundedCornerShape(8.dp))
+                                .background(Color(0xFF151212))
+                                .border(1.dp, Color(0xFF292121), RoundedCornerShape(8.dp))
                                 .padding(10.dp)
                         ) {
                             Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
@@ -2171,7 +2171,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                                         .weight(1f)
                                         .height(34.dp)
                                         .clip(RoundedCornerShape(8.dp))
-                                        .background(if (isSelected) Color(0xFFFFFFFF) else Color(0xFF1B1D25))
+                                        .background(if (isSelected) Color(0xFFFFFFFF) else Color(0xFF231D1D))
                                         .border(1.dp, if (isSelected) Color.Transparent else Color(0xFF2C2F3A), RoundedCornerShape(8.dp))
                                         .clickable {
                                             autoBackupHours = h
@@ -2180,7 +2180,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                                 ) {
                                     Text(
                                         text = "${h}h",
-                                        color = if (isSelected) Color(0xFF070709) else TextSecondary,
+                                        color = if (isSelected) Color(0xFF090707) else TextSecondary,
                                         fontSize = 12.sp,
                                         fontWeight = if (isSelected) FontWeight.Bold else FontWeight.Medium
                                     )
@@ -2191,7 +2191,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                 }
 
                 Spacer(modifier = Modifier.height(14.dp))
-                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF22242D)))
+                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF2B2424)))
                 Spacer(modifier = Modifier.height(14.dp))
 
                 // Full Library & Metadata Match Sync Toggle
@@ -2206,7 +2206,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                 )
 
                 Spacer(modifier = Modifier.height(14.dp))
-                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF22242D)))
+                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF2B2424)))
                 Spacer(modifier = Modifier.height(14.dp))
 
                 // Backup Destination Chat Input
@@ -2276,7 +2276,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                 }
 
                 Spacer(modifier = Modifier.height(14.dp))
-                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF22242D)))
+                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF2B2424)))
                 Spacer(modifier = Modifier.height(14.dp))
 
                 // Primary Cloud Row
@@ -2365,8 +2365,8 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(10.dp))
-                        .background(Color(0xFF14161E))
-                        .border(1.dp, Color(0xFF22242F), RoundedCornerShape(10.dp))
+                        .background(Color(0xFF1C1616))
+                        .border(1.dp, Color(0xFF2D2424), RoundedCornerShape(10.dp))
                         .padding(12.dp)
                 ) {
                     Column {
@@ -2450,7 +2450,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                 }
 
                 Spacer(modifier = Modifier.height(14.dp))
-                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF22242D)))
+                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF2B2424)))
                 Spacer(modifier = Modifier.height(14.dp))
 
                 // Status view & Actions
@@ -2545,7 +2545,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                                     .height(6.dp)
                                     .clip(RoundedCornerShape(3.dp)),
                                 color = StatusGreen,
-                                trackColor = Color(0xFF26262E)
+                                trackColor = Color(0xFF2E2626)
                             )
                             Row(
                                 modifier = Modifier.fillMaxWidth(),
@@ -2636,14 +2636,14 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                                 modifier = Modifier
                                     .size(18.dp)
                                     .clip(CircleShape)
-                                    .background(if (showBetaInfo) Color(0x33A855F7) else Color(0x1AFFFFFF))
+                                    .background(if (showBetaInfo) Color(0x33FB515B) else Color(0x1AFFFFFF))
                                     .clickable { showBetaInfo = !showBetaInfo },
                                 contentAlignment = Alignment.Center
                             ) {
                                 Icon(
                                     imageVector = Icons.Default.Info,
                                     contentDescription = "Beta channel info",
-                                    tint = if (showBetaInfo) Color(0xFFA855F7) else Color(0xFF9CA3AF),
+                                    tint = if (showBetaInfo) Color(0xFFFB515B) else Color(0xFF9CA3AF),
                                     modifier = Modifier.size(12.dp)
                                 )
                             }
@@ -2654,9 +2654,9 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                             onCheckedChange = { viewModel.updateReceiveBetaUpdates(it) },
                             colors = SwitchDefaults.colors(
                                 checkedThumbColor = Color.White,
-                                checkedTrackColor = Color(0xFFA855F7),
+                                checkedTrackColor = Color(0xFFFB515B),
                                 uncheckedThumbColor = Color.Gray,
-                                uncheckedTrackColor = Color(0xFF1E1F27)
+                                uncheckedTrackColor = Color(0xFF261F1F)
                             )
                         )
                     }
@@ -2671,8 +2671,8 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                                 .fillMaxWidth()
                                 .padding(top = 8.dp)
                                 .clip(RoundedCornerShape(8.dp))
-                                .background(Color(0xFF13141B))
-                                .border(0.5.dp, Color(0xFF242735), RoundedCornerShape(8.dp))
+                                .background(Color(0xFF191515))
+                                .border(0.5.dp, Color(0xFF312828), RoundedCornerShape(8.dp))
                                 .padding(horizontal = 10.dp, vertical = 8.dp)
                         ) {
                             Text(
@@ -2687,7 +2687,7 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
 
                 // ==================== WHAT'S NEW SECTION ====================
                 Spacer(modifier = Modifier.height(14.dp))
-                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF22242D)))
+                Box(modifier = Modifier.fillMaxWidth().height(0.5.dp).background(Color(0xFF2B2424)))
                 Spacer(modifier = Modifier.height(14.dp))
 
                 val whatsNewCategories = remember { WhatsNewRepository.getItemsByCategory() }
@@ -2702,8 +2702,8 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(10.dp))
-                            .background(Color(0xFF14151B))
-                            .border(BorderStroke(0.5.dp, Color(0xFF22242D)), RoundedCornerShape(10.dp))
+                            .background(Color(0xFF1A1515))
+                            .border(BorderStroke(0.5.dp, Color(0xFF2B2424)), RoundedCornerShape(10.dp))
                             .clickable { expandedWhatsNew = !expandedWhatsNew }
                             .padding(horizontal = 12.dp, vertical = 10.dp),
                         horizontalArrangement = Arrangement.SpaceBetween,
@@ -2816,8 +2816,8 @@ fun SettingsScreen(viewModel: MainAppViewModel) {
                                                 modifier = Modifier
                                                     .fillMaxWidth()
                                                     .clip(RoundedCornerShape(8.dp))
-                                                    .background(Color(0xFF101217))
-                                                    .border(BorderStroke(0.5.dp, Color(0xFF1F2128)), RoundedCornerShape(8.dp))
+                                                    .background(Color(0xFF151212))
+                                                    .border(BorderStroke(0.5.dp, Color(0xFF272020)), RoundedCornerShape(8.dp))
                                                     .padding(10.dp),
                                                 verticalArrangement = Arrangement.spacedBy(3.dp)
                                             ) {
@@ -3094,9 +3094,9 @@ private fun MinimalSettingsCard(
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(18.dp))
-            .border(BorderStroke(1.dp, Color(0xFF22242D)), RoundedCornerShape(18.dp)),
+            .border(BorderStroke(1.dp, Color(0xFF2B2424)), RoundedCornerShape(18.dp)),
         shape = RoundedCornerShape(18.dp),
-        colors = CardDefaults.cardColors(containerColor = Color(0xFF12141A))
+        colors = CardDefaults.cardColors(containerColor = Color(0xFF181414))
     ) {
         Column(modifier = Modifier.fillMaxWidth()) {
             Row(
@@ -3117,8 +3117,8 @@ private fun MinimalSettingsCard(
                         modifier = Modifier
                             .size(36.dp)
                             .clip(RoundedCornerShape(11.dp))
-                            .background(Color(0xFF1B1D25))
-                            .border(1.dp, Color(0xFF2A2D38), RoundedCornerShape(11.dp))
+                            .background(Color(0xFF231D1D))
+                            .border(1.dp, Color(0xFF362C2C), RoundedCornerShape(11.dp))
                     ) {
                         Icon(
                             imageVector = icon,
@@ -3160,7 +3160,7 @@ private fun MinimalSettingsCard(
                         modifier = Modifier
                             .size(28.dp)
                             .clip(CircleShape)
-                            .background(Color(0xFF1B1D25))
+                            .background(Color(0xFF231D1D))
                             .rotate(rotation)
                     ) {
                         Icon(
@@ -3187,7 +3187,7 @@ private fun MinimalSettingsCard(
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(0.5.dp)
-                            .background(Color(0xFF22242D))
+                            .background(Color(0xFF2B2424))
                     )
                     Spacer(modifier = Modifier.height(14.dp))
                     expandedContent()
@@ -3252,8 +3252,8 @@ private fun SettingToggleRow(
                     .fillMaxWidth()
                     .padding(top = 8.dp)
                     .clip(RoundedCornerShape(8.dp))
-                    .background(Color(0xFF161820))
-                    .border(1.dp, Color(0xFF242732), RoundedCornerShape(8.dp))
+                    .background(Color(0xFF1E1818))
+                    .border(1.dp, Color(0xFF2F2727), RoundedCornerShape(8.dp))
                     .padding(horizontal = 10.dp, vertical = 8.dp)
             ) {
                 Text(
@@ -3328,8 +3328,8 @@ private fun SettingActionRow(
                     .fillMaxWidth()
                     .padding(top = 8.dp)
                     .clip(RoundedCornerShape(8.dp))
-                    .background(Color(0xFF161820))
-                    .border(1.dp, Color(0xFF242732), RoundedCornerShape(8.dp))
+                    .background(Color(0xFF1E1818))
+                    .border(1.dp, Color(0xFF2F2727), RoundedCornerShape(8.dp))
                     .padding(horizontal = 10.dp, vertical = 8.dp)
             ) {
                 Text(

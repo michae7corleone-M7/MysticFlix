@@ -203,7 +203,7 @@ fun SplashScreen(
 
             // NoxMedia Title in Nothing OS Dot-Matrix Typography
             Text(
-                text = "NoxMedia",
+                text = "MysticFlix",
                 color = Color.White,
                 fontSize = 30.sp,
                 fontFamily = NdotFont,

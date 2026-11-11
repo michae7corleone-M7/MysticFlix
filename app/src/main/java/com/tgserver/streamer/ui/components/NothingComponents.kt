@@ -94,20 +94,20 @@ fun NothingPillButton(
 
     val containerColor = when (variant) {
         NothingButtonVariant.Primary -> if (enabled) Color(0xFFFFFFFF) else Color(0xFF323238)
-        NothingButtonVariant.Secondary -> if (enabled) SurfaceCardElevated else Color(0xFF141418)
+        NothingButtonVariant.Secondary -> if (enabled) SurfaceCardElevated else Color(0xFF181414)
         NothingButtonVariant.Accent -> if (enabled) AccentYellow else Color(0xFF3D350A)
         NothingButtonVariant.Ghost -> Color.Transparent
     }
 
     val contentColor = when (variant) {
-        NothingButtonVariant.Primary -> if (enabled) Color(0xFF070709) else Color(0xFF71717A)
+        NothingButtonVariant.Primary -> if (enabled) Color(0xFF090707) else Color(0xFF71717A)
         NothingButtonVariant.Secondary -> if (enabled) Color(0xFFFFFFFF) else Color(0xFF52525B)
-        NothingButtonVariant.Accent -> if (enabled) Color(0xFF070709) else Color(0xFF71717A)
+        NothingButtonVariant.Accent -> if (enabled) Color(0xFF090707) else Color(0xFF71717A)
         NothingButtonVariant.Ghost -> if (enabled) Color(0xFFFFFFFF) else Color(0xFF52525B)
     }
 
     val borderColor = when (variant) {
-        NothingButtonVariant.Secondary -> if (enabled) BorderSubtle else Color(0xFF1F1F24)
+        NothingButtonVariant.Secondary -> if (enabled) BorderSubtle else Color(0xFF251E1E)
         NothingButtonVariant.Ghost -> if (enabled) BorderSilver else BorderSubtle
         else -> Color.Transparent
     }
@@ -561,7 +561,7 @@ fun NothingSwitch(
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
     activeColor: Color = StatusGreen,
-    inactiveColor: Color = Color(0xFF262833)
+    inactiveColor: Color = Color(0xFF312828)
 ) {
     val haptic = LocalHapticFeedback.current
     val trackHeight = 22.dp
@@ -598,7 +598,7 @@ fun NothingSwitch(
 
     val trackBgColor by animateColorAsState(
         targetValue = when {
-            !enabled -> Color(0xFF16171E)
+            !enabled -> Color(0xFF1D1717)
             checked -> activeColor
             else -> inactiveColor
         },
@@ -608,7 +608,7 @@ fun NothingSwitch(
 
     val haloBorderColor by animateColorAsState(
         targetValue = when {
-            !enabled -> Color(0xFF22242D)
+            !enabled -> Color(0xFF2B2424)
             checked -> activeColor.copy(alpha = 0.35f)
             else -> Color(0xFF383B4A)
         },
@@ -651,7 +651,7 @@ fun PixelCyberSwitch(
     modifier: Modifier = Modifier,
     enabled: Boolean = true,
     activeColor: Color = StatusGreen,
-    inactiveColor: Color = Color(0xFF232530)
+    inactiveColor: Color = Color(0xFF2E2525)
 ) {
     NothingSwitch(
         checked = checked,

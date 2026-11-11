@@ -269,7 +269,7 @@ fun RemoteImage(
             modifier = modifier
                 .background(
                     Brush.verticalGradient(
-                        colors = listOf(Color(0xFF1B1C22), Color(0xFF101115))
+                        colors = listOf(Color(0xFF221B1B), Color(0xFF141111))
                     )
                 ),
             contentAlignment = Alignment.Center
@@ -277,7 +277,7 @@ fun RemoteImage(
             if (isLoading) {
                 CircularProgressIndicator(
                     modifier = Modifier.size(20.dp),
-                    color = Color(0xFFA855F7),
+                    color = Color(0xFFFB515B),
                     strokeWidth = 2.dp
                 )
             } else {
@@ -712,8 +712,8 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
                             modifier = Modifier
                                 .size(38.dp)
                                 .clip(RoundedCornerShape(12.dp))
-                                .background(Color(0xFF16171E))
-                                .border(1.dp, Color(0xFF282A34), RoundedCornerShape(12.dp))
+                                .background(Color(0xFF1D1717))
+                                .border(1.dp, Color(0xFF332929), RoundedCornerShape(12.dp))
                         ) {
                             Icon(
                                 imageVector = Icons.Default.Refresh,
@@ -731,9 +731,9 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
                             .padding(horizontal = 20.dp)
                             .height(44.dp)
                             .clip(RoundedCornerShape(999.dp))
-                            .background(Color(0xFF14151B))
+                            .background(Color(0xFF1A1515))
                             .border(
-                                BorderStroke(1.dp, if (searchQuery.isNotBlank()) Color(0xFFA855F7) else Color(0xFF25262F)),
+                                BorderStroke(1.dp, if (searchQuery.isNotBlank()) Color(0xFFFB515B) else Color(0xFF2E2626)),
                                 shape = RoundedCornerShape(999.dp)
                             )
                             .padding(horizontal = 14.dp),
@@ -747,7 +747,7 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
                             Icon(
                                 imageVector = Icons.Default.Search,
                                 contentDescription = "Search",
-                                tint = if (searchQuery.isNotBlank()) Color(0xFFA855F7) else Color(0xFF888B98),
+                                tint = if (searchQuery.isNotBlank()) Color(0xFFFB515B) else Color(0xFF888B98),
                                 modifier = Modifier.size(16.dp)
                             )
                             Box(modifier = Modifier.weight(1f), contentAlignment = Alignment.CenterStart) {
@@ -779,7 +779,7 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
                                         fontSize = 12.5.sp,
                                         fontFamily = FontFamily.Default
                                     ),
-                                    cursorBrush = androidx.compose.ui.graphics.SolidColor(Color(0xFFA855F7)),
+                                    cursorBrush = androidx.compose.ui.graphics.SolidColor(Color(0xFFFB515B)),
                                     modifier = Modifier.fillMaxWidth()
                                 )
                             }
@@ -803,9 +803,9 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
                             .padding(horizontal = 20.dp)
                             .height(44.dp)
                             .clip(RoundedCornerShape(999.dp))
-                            .background(Color(0xFF13141B))
+                            .background(Color(0xFF191515))
                             .border(
-                                BorderStroke(1.dp, Color(0xFF242632)),
+                                BorderStroke(1.dp, Color(0xFF2F2727)),
                                 shape = RoundedCornerShape(999.dp)
                             )
                             .padding(4.dp)
@@ -830,7 +830,7 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
                                 .clip(RoundedCornerShape(999.dp))
                                 .background(
                                     Brush.horizontalGradient(
-                                        listOf(Color(0xFF8B5CF6), Color(0xFFA855F7))
+                                        listOf(Color(0xFFFA5862), Color(0xFFFB515B))
                                     )
                                 )
                                 .border(
@@ -898,10 +898,10 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
                             Box(
                                 modifier = Modifier
                                     .clip(RoundedCornerShape(8.dp))
-                                    .background(if (isMultiSelectMode) Color(0xFF2E1A47) else Color(0xFF1B1D25))
+                                    .background(if (isMultiSelectMode) Color(0xFF48191C) else Color(0xFF231D1D))
                                     .border(
                                         1.dp,
-                                        if (isMultiSelectMode) Color(0xFFA855F7) else Color(0xFF2C2F3A),
+                                        if (isMultiSelectMode) Color(0xFFFB515B) else Color(0xFF2C2F3A),
                                         RoundedCornerShape(8.dp)
                                     )
                                     .clickable {
@@ -919,12 +919,12 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
                                     Icon(
                                         imageVector = Icons.Default.Checklist,
                                         contentDescription = "Select multiple",
-                                        tint = if (isMultiSelectMode) Color(0xFFC084FC) else Color(0xFFCBD5E1),
+                                        tint = if (isMultiSelectMode) Color(0xFFFF8087) else Color(0xFFCBD5E1),
                                         modifier = Modifier.size(14.dp)
                                     )
                                     Text(
                                         text = if (isMultiSelectMode) "Done" else "Select",
-                                        color = if (isMultiSelectMode) Color(0xFFC084FC) else Color.White,
+                                        color = if (isMultiSelectMode) Color(0xFFFF8087) else Color.White,
                                         fontSize = 11.sp,
                                         fontFamily = NdotFont,
                                         letterSpacing = 0.5.sp
@@ -936,10 +936,10 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
                             Row(
                                 modifier = Modifier
                                     .clip(RoundedCornerShape(8.dp))
-                                    .background(if (activeFilters.hasActiveFilters) Color(0xFF2E1A47) else Color(0xFF1B1D25))
+                                    .background(if (activeFilters.hasActiveFilters) Color(0xFF48191C) else Color(0xFF231D1D))
                                     .border(
                                         1.dp,
-                                        if (activeFilters.hasActiveFilters) Color(0xFFA855F7) else Color(0xFF2C2F3A),
+                                        if (activeFilters.hasActiveFilters) Color(0xFFFB515B) else Color(0xFF2C2F3A),
                                         RoundedCornerShape(8.dp)
                                     )
                                     .clickable {
@@ -953,7 +953,7 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
                                 Icon(
                                     imageVector = Icons.Default.Tune,
                                     contentDescription = "Filters",
-                                    tint = if (activeFilters.hasActiveFilters) Color(0xFFC084FC) else Color(0xFFA855F7),
+                                    tint = if (activeFilters.hasActiveFilters) Color(0xFFFF8087) else Color(0xFFFB515B),
                                     modifier = Modifier.size(13.dp)
                                 )
                                 Text(
@@ -967,7 +967,7 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
                                     Box(
                                         modifier = Modifier
                                             .clip(CircleShape)
-                                            .background(Color(0xFFA855F7))
+                                            .background(Color(0xFFFB515B))
                                             .padding(horizontal = 5.dp, vertical = 1.dp),
                                         contentAlignment = Alignment.Center
                                     ) {
@@ -983,7 +983,7 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
                                     Icon(
                                         imageVector = Icons.Default.KeyboardArrowDown,
                                         contentDescription = null,
-                                        tint = Color(0xFFA855F7),
+                                        tint = Color(0xFFFB515B),
                                         modifier = Modifier.size(13.dp)
                                     )
                                 }
@@ -1003,7 +1003,7 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
                             if (isFiltering || allMedia.isNotEmpty()) {
                                 CircularProgressIndicator(
                                     modifier = Modifier.size(28.dp),
-                                    color = Color(0xFFA855F7),
+                                    color = Color(0xFFFB515B),
                                     strokeWidth = 2.dp
                                 )
                             } else {
@@ -1079,7 +1079,7 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
                                         ) {
                                             CircularProgressIndicator(
                                                 modifier = Modifier.size(20.dp),
-                                                color = Color(0xFFA855F7),
+                                                color = Color(0xFFFB515B),
                                                 strokeWidth = 2.dp
                                             )
                                         }
@@ -1126,8 +1126,8 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
         ) {
             Surface(
                 shape = RoundedCornerShape(999.dp),
-                color = Color(0xFF14151E),
-                border = BorderStroke(1.dp, Color(0xFF8B5CF6).copy(alpha = 0.7f)),
+                color = Color(0xFF1C1616),
+                border = BorderStroke(1.dp, Color(0xFFFA5862).copy(alpha = 0.7f)),
                 shadowElevation = 16.dp
             ) {
                 Row(
@@ -1160,7 +1160,7 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
                     // Select All / Deselect All
                     Text(
                         text = if (selectedGroupKeys.size == filteredGroups.size && filteredGroups.isNotEmpty()) "Deselect" else "Select All",
-                        color = Color(0xFFC084FC),
+                        color = Color(0xFFFF8087),
                         fontFamily = NdotFont,
                         fontSize = 11.sp,
                         modifier = Modifier
@@ -1189,7 +1189,7 @@ fun LibraryScreen(viewModel: MainAppViewModel) {
                         enabled = selectedGroupKeys.isNotEmpty(),
                         colors = ButtonDefaults.buttonColors(
                             containerColor = if (isHideTab) Color(0xFF059669) else Color(0xFFDC2626),
-                            disabledContainerColor = Color(0xFF262837)
+                            disabledContainerColor = Color(0xFF332A2A)
                         ),
                         shape = RoundedCornerShape(999.dp),
                         contentPadding = PaddingValues(horizontal = 14.dp, vertical = 6.dp)
@@ -1294,7 +1294,7 @@ private fun PosterCard(
                 .border(
                     BorderStroke(
                         if (isSelected) 2.dp else 1.dp,
-                        if (isSelected) Color(0xFFA855F7) else Color(0xFF2A1C3C)
+                        if (isSelected) Color(0xFFFB515B) else Color(0xFF3D1B1D)
                     ),
                     RoundedCornerShape(14.dp)
                 )
@@ -1314,7 +1314,7 @@ private fun PosterCard(
                         .padding(8.dp)
                         .size(24.dp)
                         .clip(CircleShape)
-                        .background(if (isSelected) Color(0xFFA855F7) else Color(0x99000000))
+                        .background(if (isSelected) Color(0xFFFB515B) else Color(0x99000000))
                         .border(
                             BorderStroke(
                                 1.5.dp,
@@ -1372,7 +1372,7 @@ private fun PosterCard(
                         .align(Alignment.BottomStart)
                         .padding(6.dp)
                         .clip(RoundedCornerShape(6.dp))
-                        .background(Color(0xFF6B21A8).copy(alpha = 0.85f))
+                        .background(Color(0xFFAB1E26).copy(alpha = 0.85f))
                         .padding(horizontal = 6.dp, vertical = 2.dp)
                 ) {
                     Text(
@@ -1405,7 +1405,7 @@ private fun PosterCard(
         }
         Text(
             text = subtitle,
-            color = Color(0xFFA855F7),
+            color = Color(0xFFFB515B),
             fontFamily = FontFamily.Default,
             fontWeight = FontWeight.Medium,
             fontSize = 11.sp,
@@ -1479,14 +1479,14 @@ private fun QuickActionModal(
                     .padding(24.dp)
                     .widthIn(max = 330.dp)
                     .clip(RoundedCornerShape(24.dp))
-                    .background(Color(0xFF14151E))
+                    .background(Color(0xFF1C1616))
                     .border(
                         BorderStroke(
                             1.5.dp,
                             Brush.verticalGradient(
                                 listOf(
-                                    Color(0xFFA855F7).copy(alpha = 0.6f),
-                                    Color(0xFF2E1A47)
+                                    Color(0xFFFB515B).copy(alpha = 0.6f),
+                                    Color(0xFF48191C)
                                 )
                             )
                         ),
@@ -1507,7 +1507,7 @@ private fun QuickActionModal(
                         .aspectRatio(2f / 3f)
                         .clip(RoundedCornerShape(16.dp))
                         .border(
-                            BorderStroke(1.5.dp, Color(0xFFA855F7).copy(alpha = 0.8f)),
+                            BorderStroke(1.5.dp, Color(0xFFFB515B).copy(alpha = 0.8f)),
                             RoundedCornerShape(16.dp)
                         )
                 ) {
@@ -1524,7 +1524,7 @@ private fun QuickActionModal(
                                 .align(Alignment.BottomStart)
                                 .padding(6.dp)
                                 .clip(RoundedCornerShape(6.dp))
-                                .background(Color(0xFF6B21A8).copy(alpha = 0.9f))
+                                .background(Color(0xFFAB1E26).copy(alpha = 0.9f))
                                 .padding(horizontal = 6.dp, vertical = 2.dp)
                         ) {
                             Text(
@@ -1561,7 +1561,7 @@ private fun QuickActionModal(
                     )
                 }
 
-                HorizontalDivider(color = Color(0xFF262837), thickness = 1.dp)
+                HorizontalDivider(color = Color(0xFF332A2A), thickness = 1.dp)
 
                 // Actions: Hide/Unhide
                 Row(
@@ -1606,7 +1606,7 @@ private fun QuickActionModal(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(14.dp))
-                        .background(Color(0xFF1F212D))
+                        .background(Color(0xFF2A2222))
                         .border(1.dp, Color(0xFF323648), RoundedCornerShape(14.dp))
                         .clickable(onClick = onStartMultiSelect)
                         .padding(horizontal = 14.dp, vertical = 12.dp),
@@ -1616,7 +1616,7 @@ private fun QuickActionModal(
                     Icon(
                         imageVector = Icons.Default.Checklist,
                         contentDescription = null,
-                        tint = Color(0xFFC084FC),
+                        tint = Color(0xFFFF8087),
                         modifier = Modifier.size(20.dp)
                     )
                     Column {
@@ -1671,7 +1671,7 @@ private fun FilterBottomSheet(
 
     ModalBottomSheet(
         onDismissRequest = onDismiss,
-        containerColor = Color(0xFF12131A),
+        containerColor = Color(0xFF181414),
         contentColor = Color.White,
         dragHandle = {
             Box(
@@ -1710,7 +1710,7 @@ private fun FilterBottomSheet(
                 if (tempFilters.hasActiveFilters) {
                     Text(
                         text = "Reset All",
-                        color = Color(0xFFC084FC),
+                        color = Color(0xFFFF8087),
                         fontFamily = NdotFont,
                         fontSize = 12.sp,
                         modifier = Modifier
@@ -1847,7 +1847,7 @@ private fun FilterBottomSheet(
                     .height(48.dp)
                     .clip(RoundedCornerShape(14.dp)),
                 colors = ButtonDefaults.buttonColors(
-                    containerColor = Color(0xFFA855F7)
+                    containerColor = Color(0xFFFB515B)
                 )
             ) {
                 Text(
@@ -1890,8 +1890,8 @@ private fun FilterChipItem(
         modifier = Modifier
             .clip(RoundedCornerShape(999.dp))
             .background(
-                if (isSelected) Brush.horizontalGradient(listOf(Color(0xFF8B5CF6), Color(0xFFA855F7)))
-                else Brush.horizontalGradient(listOf(Color(0xFF1B1D25), Color(0xFF1B1D25)))
+                if (isSelected) Brush.horizontalGradient(listOf(Color(0xFFFA5862), Color(0xFFFB515B)))
+                else Brush.horizontalGradient(listOf(Color(0xFF231D1D), Color(0xFF231D1D)))
             )
             .border(
                 BorderStroke(
@@ -2186,7 +2186,7 @@ private fun ContentDetailsScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color(0xFF070709))
+            .background(Color(0xFF090707))
     ) {
         // ==================== 1. PARALLAX HERO BACKDROP (3D Motion Depth) ====================
         val heroImageUrl = group.backdropUrl?.takeIf { it.isNotBlank() } ?: group.posterUrl
@@ -2218,7 +2218,7 @@ private fun ContentDetailsScreen(
                         .fillMaxSize()
                         .background(
                             Brush.verticalGradient(
-                                colors = listOf(Color(0xFF1E102F), Color(0xFF070709))
+                                colors = listOf(Color(0xFF300F11), Color(0xFF090707))
                             )
                         )
                 )
@@ -2247,9 +2247,9 @@ private fun ContentDetailsScreen(
                         Brush.verticalGradient(
                             colors = listOf(
                                 Color.Transparent,
-                                Color(0xFF070709).copy(alpha = 0.25f),
-                                Color(0xFF070709).copy(alpha = 0.85f),
-                                Color(0xFF070709)
+                                Color(0xFF090707).copy(alpha = 0.25f),
+                                Color(0xFF090707).copy(alpha = 0.85f),
+                                Color(0xFF090707)
                             )
                         )
                     )
@@ -2299,7 +2299,7 @@ private fun ContentDetailsScreen(
 
                     Text(
                         text = group.type.uppercase(),
-                        color = Color(0xFFA855F7),
+                        color = Color(0xFFFB515B),
                         fontSize = 11.5.sp,
                         fontWeight = FontWeight.SemiBold
                     )
@@ -2390,7 +2390,7 @@ private fun ContentDetailsScreen(
                     showMergeDialog = true
                 },
                 shape = CircleShape,
-                color = Color(0xFF191B24),
+                color = Color(0xFF221B1B),
                 border = BorderStroke(0.8.dp, Color(0x33FFFFFF)),
                 modifier = Modifier.size(44.dp)
             ) {
@@ -2398,7 +2398,7 @@ private fun ContentDetailsScreen(
                     Icon(
                         imageVector = Icons.Default.Layers,
                         contentDescription = "Merge with another title",
-                        tint = Color(0xFFA855F7),
+                        tint = Color(0xFFFB515B),
                         modifier = Modifier.size(20.dp)
                     )
                 }
@@ -2411,7 +2411,7 @@ private fun ContentDetailsScreen(
                     showPosterZoomDialog = true
                 },
                 shape = CircleShape,
-                color = Color(0xFF191B24),
+                color = Color(0xFF221B1B),
                 border = BorderStroke(0.8.dp, Color(0x33FFFFFF)),
                 modifier = Modifier.size(44.dp)
             ) {
@@ -2559,7 +2559,7 @@ private fun ContentDetailsScreen(
                             val isSelected = seasonNum == selectedSeason
                             Surface(
                                 shape = RoundedCornerShape(20.dp),
-                                color = if (isSelected) Color.White else Color(0xFF14151C),
+                                color = if (isSelected) Color.White else Color(0xFF1A1616),
                                 border = BorderStroke(0.5.dp, if (isSelected) Color.White else Color(0x33FFFFFF)),
                                 modifier = Modifier.clickable { selectedSeason = seasonNum }
                             ) {
@@ -2678,7 +2678,7 @@ private fun ContentDetailsScreen(
                     modifier = Modifier
                         .size(6.dp)
                         .clip(CircleShape)
-                        .background(Color(0xFFA855F7))
+                        .background(Color(0xFFFB515B))
                 )
                 Text(
                     text = "ABOUT & SPECIFICATIONS",
@@ -2691,8 +2691,8 @@ private fun ContentDetailsScreen(
 
             Surface(
                 shape = RoundedCornerShape(18.dp),
-                color = Color(0xFF101117),
-                border = BorderStroke(1.dp, Color(0xFF1F222E)),
+                color = Color(0xFF151212),
+                border = BorderStroke(1.dp, Color(0xFF2A2323)),
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Column(
@@ -2721,7 +2721,7 @@ private fun ContentDetailsScreen(
                                     showManageDbDialog = true
                                 },
                                 shape = RoundedCornerShape(6.dp),
-                                color = Color(0xFF1E212D),
+                                color = Color(0xFF292222),
                                 border = BorderStroke(0.6.dp, Color(0x44FFFFFF))
                             ) {
                                 Row(
@@ -2791,7 +2791,7 @@ private fun ContentDetailsScreen(
                                 Surface(
                                     onClick = { showManageDbDialog = true },
                                     shape = RoundedCornerShape(8.dp),
-                                    color = Color(0xFF121924),
+                                    color = Color(0xFF1E1818),
                                     border = BorderStroke(1.dp, if (primaryProvider == "tmdb") Color(0xFF60A5FA) else Color(0x6660A5FA))
                                 ) {
                                     Row(
@@ -2892,7 +2892,7 @@ private fun ContentDetailsScreen(
                         }
                     }
 
-                    HorizontalDivider(color = Color(0xFF1C1E28), thickness = 0.5.dp)
+                    HorizontalDivider(color = Color(0xFF251F1F), thickness = 0.5.dp)
 
                     // Block 2: 2-Column Responsive Specs Grid
                     Row(
@@ -2908,7 +2908,7 @@ private fun ContentDetailsScreen(
                                 Text("TOTAL STORAGE", color = Color(0xFF717482), fontFamily = NdotFont, fontSize = 9.5.sp)
                                 Text(
                                     text = visualSpecs.totalSize,
-                                    color = Color(0xFFC084FC),
+                                    color = Color(0xFFFF8087),
                                     fontFamily = NdotFont,
                                     fontSize = 14.sp,
                                     fontWeight = FontWeight.Bold
@@ -2919,7 +2919,7 @@ private fun ContentDetailsScreen(
                                 Text("CONTENT TYPE", color = Color(0xFF717482), fontFamily = NdotFont, fontSize = 9.5.sp)
                                 Text(
                                     text = group.type.uppercase(),
-                                    color = Color(0xFFA855F7),
+                                    color = Color(0xFFFB515B),
                                     fontSize = 12.sp,
                                     fontWeight = FontWeight.Bold
                                 )
@@ -2956,7 +2956,7 @@ private fun ContentDetailsScreen(
 
                     // Block 3: Audio / Languages (Dedicated full-width row with clean tags)
                     if (visualSpecs.audioLanguages.isNotEmpty()) {
-                        HorizontalDivider(color = Color(0xFF1C1E28), thickness = 0.5.dp)
+                        HorizontalDivider(color = Color(0xFF251F1F), thickness = 0.5.dp)
 
                         Column(verticalArrangement = Arrangement.spacedBy(6.dp)) {
                             Text(
@@ -2973,7 +2973,7 @@ private fun ContentDetailsScreen(
                                 visualSpecs.audioLanguages.forEach { lang ->
                                     Surface(
                                         shape = RoundedCornerShape(6.dp),
-                                        color = Color(0xFF181A24),
+                                        color = Color(0xFF211B1B),
                                         border = BorderStroke(0.5.dp, Color(0x33FFFFFF))
                                     ) {
                                         Text(
@@ -3016,7 +3016,7 @@ private fun ContentDetailsScreen(
         modifier = Modifier
             .fillMaxWidth()
             .align(Alignment.TopCenter)
-            .background(Color(0xFF070709).copy(alpha = navAlpha * 0.90f))
+            .background(Color(0xFF090707).copy(alpha = navAlpha * 0.90f))
             .border(
                 width = 0.5.dp,
                 color = Color.White.copy(alpha = navAlpha * 0.12f)
@@ -3139,9 +3139,9 @@ private fun EpisodeGroupAccordionRow(
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(14.dp))
-            .background(if (isExpanded) Color(0xFF14161F) else Color(0xFF0F1015))
+            .background(if (isExpanded) Color(0xFF1C1717) else Color(0xFF141010))
             .border(
-                BorderStroke(0.8.dp, if (isExpanded) Color(0x55A855F7) else Color(0xFF1E202B)),
+                BorderStroke(0.8.dp, if (isExpanded) Color(0x55FB515B) else Color(0xFF282121)),
                 RoundedCornerShape(14.dp)
             )
     ) {
@@ -3194,7 +3194,7 @@ private fun EpisodeGroupAccordionRow(
                         .width(108.dp)
                         .aspectRatio(16f / 9f)
                         .clip(RoundedCornerShape(8.dp))
-                        .background(Color(0xFF191B24))
+                        .background(Color(0xFF221B1B))
                         .border(BorderStroke(0.6.dp, Color(0x33FFFFFF)), RoundedCornerShape(8.dp))
                 ) {
                     RemoteImage(
@@ -3290,7 +3290,7 @@ private fun EpisodeGroupAccordionRow(
                     .padding(start = 12.dp, end = 12.dp, bottom = 12.dp, top = 2.dp),
                 verticalArrangement = Arrangement.spacedBy(8.dp)
             ) {
-                HorizontalDivider(color = Color(0xFF222432), thickness = 0.8.dp)
+                HorizontalDivider(color = Color(0xFF2E2626), thickness = 0.8.dp)
 
                 epItems.forEach { item ->
                     val isHidden = item.isHidden
@@ -3298,7 +3298,7 @@ private fun EpisodeGroupAccordionRow(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(10.dp))
-                            .background(if (isHidden) Color(0xFF131014) else Color(0xFF1A1C25))
+                            .background(if (isHidden) Color(0xFF141010) else Color(0xFF231C1C))
                             .border(
                                 1.dp,
                                 if (isHidden) Color(0xFF4A1924) else Color(0xFF2A2D3C),
@@ -3369,7 +3369,7 @@ private fun EpisodeGroupAccordionRow(
                                     Box(
                                         modifier = Modifier
                                             .clip(RoundedCornerShape(7.dp))
-                                            .background(if (isHidden) Color(0xFF3F1318) else Color(0xFF232532))
+                                            .background(if (isHidden) Color(0xFF3F1318) else Color(0xFF2F2626))
                                             .border(
                                                 1.dp,
                                                 if (isHidden) Color(0xFFDC2626) else Color(0xFF3E4358),
@@ -3433,9 +3433,9 @@ private fun MovieStreamItemRow(
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(14.dp))
-            .background(if (isHidden) Color(0xFF131014) else Color(0xFF0F1015))
+            .background(if (isHidden) Color(0xFF141010) else Color(0xFF141010))
             .border(
-                BorderStroke(0.8.dp, if (isHidden) Color(0xFF4A1924) else if (isExpanded) Color(0x55A855F7) else Color(0xFF1E202B)),
+                BorderStroke(0.8.dp, if (isHidden) Color(0xFF4A1924) else if (isExpanded) Color(0x55FB515B) else Color(0xFF282121)),
                 RoundedCornerShape(14.dp)
             )
             .clickable { isExpanded = !isExpanded }
@@ -3453,7 +3453,7 @@ private fun MovieStreamItemRow(
                         .width(108.dp)
                         .aspectRatio(16f / 9f)
                         .clip(RoundedCornerShape(8.dp))
-                        .background(Color(0xFF191B24))
+                        .background(Color(0xFF221B1B))
                         .border(BorderStroke(0.5.dp, Color(0x28FFFFFF)), RoundedCornerShape(8.dp))
                 ) {
                     RemoteImage(
@@ -3599,7 +3599,7 @@ private fun MovieStreamItemRow(
                     Box(
                         modifier = Modifier
                             .clip(RoundedCornerShape(7.dp))
-                            .background(if (isHidden) Color(0xFF3F1318) else Color(0xFF232532))
+                            .background(if (isHidden) Color(0xFF3F1318) else Color(0xFF2F2626))
                             .border(
                                 1.dp,
                                 if (isHidden) Color(0xFFDC2626) else Color(0xFF3E4358),
@@ -3649,13 +3649,13 @@ private fun MovieStreamItemRow(
                         .padding(top = 4.dp),
                     verticalArrangement = Arrangement.spacedBy(8.dp)
                 ) {
-                    HorizontalDivider(color = Color(0xFF222432), thickness = 0.8.dp)
+                    HorizontalDivider(color = Color(0xFF2E2626), thickness = 0.8.dp)
 
                     Box(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(10.dp))
-                            .background(if (isHidden) Color(0xFF131014) else Color(0xFF1A1C25))
+                            .background(if (isHidden) Color(0xFF141010) else Color(0xFF231C1C))
                             .border(
                                 1.dp,
                                 if (isHidden) Color(0xFF4A1924) else Color(0xFF2A2D3C),
@@ -3789,7 +3789,7 @@ private fun ManageDatabaseIdentifiersDialog(
 
     AlertDialog(
         onDismissRequest = onDismiss,
-        containerColor = Color(0xFF13141B),
+        containerColor = Color(0xFF191515),
         titleContentColor = Color.White,
         shape = RoundedCornerShape(18.dp),
         title = {
@@ -3843,7 +3843,7 @@ private fun ManageDatabaseIdentifiersDialog(
                             key = "tmdb",
                             name = "TMDb",
                             brandColor = Color(0xFF60A5FA),
-                            bgColor = Color(0xFF121924),
+                            bgColor = Color(0xFF1E1818),
                             placeholder = "e.g. 70881"
                         )
                         "imdb" -> DbProviderCardInfo(
@@ -3871,7 +3871,7 @@ private fun ManageDatabaseIdentifiersDialog(
 
                     Surface(
                         shape = RoundedCornerShape(12.dp),
-                        color = if (isPrimary) info.bgColor else Color(0xFF181A24),
+                        color = if (isPrimary) info.bgColor else Color(0xFF211B1B),
                         border = BorderStroke(1.dp, if (isPrimary) info.brandColor.copy(alpha = 0.8f) else Color(0xFF2A2D3C)),
                         modifier = Modifier.fillMaxWidth()
                     ) {
@@ -3951,7 +3951,7 @@ private fun ManageDatabaseIdentifiersDialog(
                                     Spacer(modifier = Modifier.width(6.dp))
                                     Surface(
                                         shape = RoundedCornerShape(4.dp),
-                                        color = if (isPrimary) Color(0xFF064E3B) else Color(0xFF222430),
+                                        color = if (isPrimary) Color(0xFF064E3B) else Color(0xFF2D2525),
                                         border = BorderStroke(0.5.dp, if (isPrimary) Color(0xFF10B981) else Color(0xFF3F4458))
                                     ) {
                                         Text(
@@ -3972,7 +3972,7 @@ private fun ManageDatabaseIdentifiersDialog(
                                     modifier = Modifier
                                         .fillMaxWidth()
                                         .clip(RoundedCornerShape(8.dp))
-                                        .background(Color(0xFF0F1015))
+                                        .background(Color(0xFF141010))
                                         .border(BorderStroke(0.6.dp, Color(0xFF2E3244)), RoundedCornerShape(8.dp))
                                         .padding(horizontal = 8.dp, vertical = 6.dp)
                                 ) {
@@ -4055,7 +4055,7 @@ private fun ManageDatabaseIdentifiersDialog(
                         checked = reSyncChecked,
                         onCheckedChange = { reSyncChecked = it },
                         colors = CheckboxDefaults.colors(
-                            checkedColor = Color(0xFFA855F7),
+                            checkedColor = Color(0xFFFB515B),
                             checkmarkColor = Color.White
                         )
                     )
@@ -4098,7 +4098,7 @@ private fun ManageDatabaseIdentifiersDialog(
                             .weight(1.3f)
                             .height(42.dp),
                         shape = RoundedCornerShape(10.dp),
-                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFA855F7))
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFB515B))
                     ) {
                         Text(
                             text = "Save & Sync",
@@ -4155,7 +4155,7 @@ private fun RescanMetadataDialog(
 
     AlertDialog(
         onDismissRequest = onDismiss,
-        containerColor = Color(0xFF13141B),
+        containerColor = Color(0xFF191515),
         titleContentColor = Color.White,
         shape = RoundedCornerShape(18.dp),
         title = {
@@ -4201,7 +4201,7 @@ private fun RescanMetadataDialog(
                         .fillMaxWidth()
                         .height(42.dp)
                         .clip(RoundedCornerShape(10.dp))
-                        .background(Color(0xFF1A1C25))
+                        .background(Color(0xFF231C1C))
                         .border(1.dp, Color(0xFF2E3242), RoundedCornerShape(10.dp))
                         .padding(horizontal = 12.dp),
                     contentAlignment = Alignment.CenterStart
@@ -4219,12 +4219,12 @@ private fun RescanMetadataDialog(
                                 fontSize = 13.sp,
                                 fontFamily = FontFamily.Default
                             ),
-                            cursorBrush = androidx.compose.ui.graphics.SolidColor(Color(0xFFA855F7)),
+                            cursorBrush = androidx.compose.ui.graphics.SolidColor(Color(0xFFFB515B)),
                             modifier = Modifier.weight(1f)
                         )
                         if (isLoading) {
                             CircularProgressIndicator(
-                                color = Color(0xFFA855F7),
+                                color = Color(0xFFFB515B),
                                 modifier = Modifier.size(16.dp),
                                 strokeWidth = 2.dp
                             )
@@ -4260,10 +4260,10 @@ private fun RescanMetadataDialog(
                             Box(
                                 modifier = Modifier
                                     .clip(RoundedCornerShape(8.dp))
-                                    .background(if (isSel) Color(0xFFA855F7) else Color(0xFF1E202B))
+                                    .background(if (isSel) Color(0xFFFB515B) else Color(0xFF282121))
                                     .border(
                                         1.dp,
-                                        if (isSel) Color(0xFFC084FC) else Color(0xFF2C2F3C),
+                                        if (isSel) Color(0xFFFF8087) else Color(0xFF2C2F3C),
                                         RoundedCornerShape(8.dp)
                                     )
                                     .clickable { searchType = typeKey }
@@ -4289,7 +4289,7 @@ private fun RescanMetadataDialog(
                         contentAlignment = Alignment.Center
                     ) {
                         CircularProgressIndicator(
-                            color = Color(0xFFA855F7),
+                            color = Color(0xFFFB515B),
                             modifier = Modifier.size(24.dp),
                             strokeWidth = 2.dp
                         )
@@ -4340,8 +4340,8 @@ private fun CandidateCard(
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(12.dp))
-            .background(Color(0xFF181A22))
-            .border(1.dp, Color(0xFF282A36), RoundedCornerShape(12.dp))
+            .background(Color(0xFF201A1A))
+            .border(1.dp, Color(0xFF342A2A), RoundedCornerShape(12.dp))
             .clickable { onSelect() }
             .padding(10.dp)
     ) {
@@ -4381,7 +4381,7 @@ private fun CandidateCard(
                     if (!candidate.year.isNullOrBlank()) {
                         Text(
                             text = candidate.year,
-                            color = Color(0xFFA855F7),
+                            color = Color(0xFFFB515B),
                             fontFamily = NdotFont,
                             fontSize = 10.sp
                         )
@@ -4419,13 +4419,13 @@ private fun CandidateCard(
             Box(
                 modifier = Modifier
                     .clip(RoundedCornerShape(6.dp))
-                    .background(Color(0xFF2E1547))
-                    .border(1.dp, Color(0xFFA855F7), RoundedCornerShape(6.dp))
+                    .background(Color(0xFF481417))
+                    .border(1.dp, Color(0xFFFB515B), RoundedCornerShape(6.dp))
                     .padding(horizontal = 8.dp, vertical = 4.dp)
             ) {
                 Text(
                     text = "SYNC",
-                    color = Color(0xFFD8B4FE),
+                    color = Color(0xFFFF8087),
                     fontFamily = NdotFont,
                     fontSize = 9.5.sp,
                     fontWeight = FontWeight.Bold
@@ -4537,7 +4537,7 @@ private fun DisneyLanguageBadge(
         modifier = modifier
             .height(height)
             .clip(RoundedCornerShape(3.5.dp))
-            .background(Color(0xFF26272B))
+            .background(Color(0xFF2D2424))
             .padding(horizontal = 5.5.dp),
         contentAlignment = Alignment.Center
     ) {
@@ -4562,7 +4562,7 @@ private fun DisneyResolutionBadge(
         modifier = modifier
             .height(height)
             .clip(RoundedCornerShape(3.5.dp))
-            .background(Color(0xFF26272B))
+            .background(Color(0xFF2D2424))
             .padding(horizontal = 5.5.dp),
         contentAlignment = Alignment.Center
     ) {
@@ -5086,7 +5086,7 @@ private fun detectMediaVersions(items: List<MediaItem>): List<MediaVersionInfo> 
                 VersionMatch("atvp", "Apple TV+", "ATVP WEB-DL", Color(0xFFE4E4E7), Color(0x25FFFFFF))
             }
             tokens.contains("hmax") || tokens.contains("max") || tokens.contains("hbomax") || tokens.contains("hbo") -> {
-                VersionMatch("max", "Max", "MAX WEB-DL", Color(0xFFA855F7), Color(0x22A855F7))
+                VersionMatch("max", "Max", "MAX WEB-DL", Color(0xFFFB515B), Color(0x22FB515B))
             }
             tokens.contains("dsnp") || tokens.contains("disney") || tokens.contains("disney+") || tokens.contains("hotstar") -> {
                 VersionMatch("dsnp", "Disney+", "DSNP WEB-DL", Color(0xFF3880FF), Color(0x223880FF))
@@ -5104,7 +5104,7 @@ private fun detectMediaVersions(items: List<MediaItem>): List<MediaVersionInfo> 
                 VersionMatch("sonyliv", "SonyLIV", "SONYLIV WEB-DL", Color(0xFF3B82F6), Color(0x223B82F6))
             }
             tokens.contains("zee5") || tokens.contains("zee") -> {
-                VersionMatch("zee5", "Zee5", "ZEE5 WEB-DL", Color(0xFF8B5CF6), Color(0x228B5CF6))
+                VersionMatch("zee5", "Zee5", "ZEE5 WEB-DL", Color(0xFFFA5862), Color(0x22FA5862))
             }
             tokens.contains("remux") -> {
                 VersionMatch("remux", "Blu-ray Remux", "BD-REMUX", Color(0xFF38BDF8), Color(0x2238BDF8))
@@ -5119,7 +5119,7 @@ private fun detectMediaVersions(items: List<MediaItem>): List<MediaVersionInfo> 
                 VersionMatch("hdtv", "Broadcast HDTV", "HDTV", Color(0xFF94A3B8), Color(0x20FFFFFF))
             }
             else -> {
-                VersionMatch("standard", "Standard Library", "RETAIL", Color(0xFFC084FC), Color(0x20A855F7))
+                VersionMatch("standard", "Standard Library", "RETAIL", Color(0xFFFF8087), Color(0x20FB515B))
             }
         }
     }
@@ -5239,7 +5239,7 @@ private fun MediaVersionsSection(
 
             Surface(
                 shape = RoundedCornerShape(16.dp),
-                color = if (isVersionHidden) Color(0xFF131014) else Color(0xFF101117),
+                color = if (isVersionHidden) Color(0xFF141010) else Color(0xFF151212),
                 border = if (isVersionHidden) {
                     BorderStroke(1.dp, Color(0xFF4A1924))
                 } else {
@@ -5248,7 +5248,7 @@ private fun MediaVersionsSection(
                         Brush.horizontalGradient(
                             colors = listOf(
                                 version.brandColor.copy(alpha = 0.5f),
-                                Color(0xFF1E212D)
+                                Color(0xFF292222)
                             )
                         )
                     )
@@ -5329,7 +5329,7 @@ private fun MediaVersionsSection(
                         ) {
                             Surface(
                                 shape = RoundedCornerShape(8.dp),
-                                color = Color(0xFF181A24),
+                                color = Color(0xFF211B1B),
                                 border = BorderStroke(0.5.dp, Color(0x33FFFFFF))
                             ) {
                                 Row(
@@ -5370,7 +5370,7 @@ private fun MediaVersionsSection(
                                 Box(
                                     modifier = Modifier
                                         .clip(RoundedCornerShape(7.dp))
-                                        .background(if (isAllHidden) Color(0xFF3F1318) else Color(0xFF232532))
+                                        .background(if (isAllHidden) Color(0xFF3F1318) else Color(0xFF2F2626))
                                         .border(
                                             1.dp,
                                             if (isAllHidden) Color(0xFFDC2626) else Color(0xFF3E4358),
@@ -5517,8 +5517,8 @@ private fun MediaVersionsSection(
                             if (isExpanded) {
                                 Surface(
                                     shape = RoundedCornerShape(8.dp),
-                                    color = Color(0xFF0B0C10),
-                                    border = BorderStroke(0.5.dp, Color(0xFF1E202B)),
+                                    color = Color(0xFF0F0C0C),
+                                    border = BorderStroke(0.5.dp, Color(0xFF282121)),
                                     modifier = Modifier.fillMaxWidth()
                                 ) {
                                     Text(
@@ -5574,7 +5574,7 @@ private fun MergeTitlesDialog(
         val target = targetToConfirm!!
         AlertDialog(
             onDismissRequest = { targetToConfirm = null },
-            containerColor = Color(0xFF14151C),
+            containerColor = Color(0xFF1A1616),
             shape = RoundedCornerShape(20.dp),
             title = {
                 Text(
@@ -5595,7 +5595,7 @@ private fun MergeTitlesDialog(
                     )
                     Surface(
                         shape = RoundedCornerShape(12.dp),
-                        color = Color(0xFF1B1D28),
+                        color = Color(0xFF251E1E),
                         border = BorderStroke(1.dp, Color(0xFF2E3142)),
                         modifier = Modifier.fillMaxWidth()
                     ) {
@@ -5605,7 +5605,7 @@ private fun MergeTitlesDialog(
                         ) {
                             Text(
                                 text = "• Unified Files: ${currentGroup.items.size + target.items.size} files total",
-                                color = Color(0xFFC084FC),
+                                color = Color(0xFFFF8087),
                                 fontSize = 12.sp,
                                 fontWeight = FontWeight.SemiBold
                             )
@@ -5631,7 +5631,7 @@ private fun MergeTitlesDialog(
                         onMerge(chosen)
                     },
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = Color(0xFFA855F7),
+                        containerColor = Color(0xFFFB515B),
                         contentColor = Color.White
                     ),
                     shape = RoundedCornerShape(10.dp)
@@ -5649,7 +5649,7 @@ private fun MergeTitlesDialog(
 
     AlertDialog(
         onDismissRequest = onDismiss,
-        containerColor = Color(0xFF101117),
+        containerColor = Color(0xFF151212),
         shape = RoundedCornerShape(22.dp),
         properties = DialogProperties(usePlatformDefaultWidth = false),
         modifier = Modifier
@@ -5697,8 +5697,8 @@ private fun MergeTitlesDialog(
                 // Search Field
                 Surface(
                     shape = RoundedCornerShape(12.dp),
-                    color = Color(0xFF181A22),
-                    border = BorderStroke(1.dp, Color(0xFF282A36)),
+                    color = Color(0xFF201A1A),
+                    border = BorderStroke(1.dp, Color(0xFF342A2A)),
                     modifier = Modifier.fillMaxWidth()
                 ) {
                     Row(
@@ -5719,7 +5719,7 @@ private fun MergeTitlesDialog(
                             onValueChange = { searchQuery = it },
                             textStyle = TextStyle(color = Color.White, fontSize = 13.sp),
                             singleLine = true,
-                            cursorBrush = androidx.compose.ui.graphics.SolidColor(Color(0xFFA855F7)),
+                            cursorBrush = androidx.compose.ui.graphics.SolidColor(Color(0xFFFB515B)),
                             modifier = Modifier.weight(1f),
                             decorationBox = { innerTextField ->
                                 if (searchQuery.isEmpty()) {
@@ -5793,8 +5793,8 @@ private fun MergeCandidateRow(
     Surface(
         onClick = onSelect,
         shape = RoundedCornerShape(12.dp),
-        color = Color(0xFF161822),
-        border = BorderStroke(1.dp, Color(0xFF252836)),
+        color = Color(0xFF1F1919),
+        border = BorderStroke(1.dp, Color(0xFF322929)),
         modifier = Modifier.fillMaxWidth()
     ) {
         Row(
@@ -5834,7 +5834,7 @@ private fun MergeCandidateRow(
                     if (!target.year.isNullOrBlank()) {
                         Text(
                             text = target.year,
-                            color = Color(0xFFA855F7),
+                            color = Color(0xFFFB515B),
                             fontFamily = NdotFont,
                             fontSize = 10.sp
                         )
@@ -5865,13 +5865,13 @@ private fun MergeCandidateRow(
             Box(
                 modifier = Modifier
                     .clip(RoundedCornerShape(6.dp))
-                    .background(Color(0xFF2E1547))
-                    .border(1.dp, Color(0xFFA855F7), RoundedCornerShape(6.dp))
+                    .background(Color(0xFF481417))
+                    .border(1.dp, Color(0xFFFB515B), RoundedCornerShape(6.dp))
                     .padding(horizontal = 9.dp, vertical = 5.dp)
             ) {
                 Text(
                     text = "MERGE",
-                    color = Color(0xFFD8B4FE),
+                    color = Color(0xFFFF8087),
                     fontFamily = NdotFont,
                     fontSize = 9.5.sp,
                     fontWeight = FontWeight.Bold

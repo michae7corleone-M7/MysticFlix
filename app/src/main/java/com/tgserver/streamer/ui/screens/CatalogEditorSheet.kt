@@ -275,7 +275,7 @@ fun CatalogEditorSheet(
                         modifier = Modifier
                             .size(36.dp)
                             .clip(CircleShape)
-                            .background(Color(0xFF1E1F24))
+                            .background(Color(0xFF241E1E))
                     ) {
                         Icon(
                             imageVector = Icons.Default.Close,
@@ -333,7 +333,7 @@ fun CatalogEditorSheet(
                             haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                             onSaved(finalCatalog)
                         },
-                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFA855F7)),
+                        colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFB515B)),
                         shape = RoundedCornerShape(20.dp),
                         contentPadding = PaddingValues(horizontal = 16.dp, vertical = 8.dp)
                     ) {
@@ -371,10 +371,10 @@ fun CatalogEditorSheet(
                         modifier = Modifier.fillMaxWidth(),
                         shape = RoundedCornerShape(14.dp),
                         colors = OutlinedTextFieldDefaults.colors(
-                            focusedContainerColor = Color(0xFF16171B),
-                            unfocusedContainerColor = Color(0xFF16171B),
-                            focusedBorderColor = Color(0xFFA855F7),
-                            unfocusedBorderColor = Color(0xFF282A31),
+                            focusedContainerColor = Color(0xFF1B1616),
+                            unfocusedContainerColor = Color(0xFF1B1616),
+                            focusedBorderColor = Color(0xFFFB515B),
+                            unfocusedBorderColor = Color(0xFF312828),
                             focusedTextColor = Color.White,
                             unfocusedTextColor = Color.White
                         )
@@ -389,7 +389,7 @@ fun CatalogEditorSheet(
                         .border(
                             BorderStroke(
                                 1.dp,
-                                if (hasAiKey) Color(0xFF6D28D9).copy(alpha = 0.7f) else Color(0xFF282A31)
+                                if (hasAiKey) Color(0xFFDD242F).copy(alpha = 0.7f) else Color(0xFF312828)
                             ),
                             RoundedCornerShape(18.dp)
                         )
@@ -402,7 +402,7 @@ fun CatalogEditorSheet(
                             }
                         },
                     colors = CardDefaults.cardColors(
-                        containerColor = if (hasAiKey) Color(0xFF171322) else Color(0xFF141519)
+                        containerColor = if (hasAiKey) Color(0xFF221314) else Color(0xFF191414)
                     ),
                     shape = RoundedCornerShape(18.dp)
                 ) {
@@ -426,13 +426,13 @@ fun CatalogEditorSheet(
                                     modifier = Modifier
                                         .size(32.dp)
                                         .clip(CircleShape)
-                                        .background(if (hasAiKey) Color(0xFFA855F7).copy(alpha = 0.2f) else Color(0xFF22242C)),
+                                        .background(if (hasAiKey) Color(0xFFFB515B).copy(alpha = 0.2f) else Color(0xFF2B2323)),
                                     contentAlignment = Alignment.Center
                                 ) {
                                     Icon(
                                         imageVector = if (hasAiKey) Icons.Default.AutoAwesome else Icons.Default.Lock,
                                         contentDescription = null,
-                                        tint = if (hasAiKey) Color(0xFFA855F7) else Color(0xFF6B7280),
+                                        tint = if (hasAiKey) Color(0xFFFB515B) else Color(0xFF6B7280),
                                         modifier = Modifier.size(16.dp)
                                     )
                                 }
@@ -448,7 +448,7 @@ fun CatalogEditorSheet(
                                     Text(
                                         text = if (hasAiKey) "Powered by ${if (config.aiProvider == "openrouter") "OpenRouter" else "Gemini"}"
                                         else "API key required to unlock",
-                                        color = if (hasAiKey) Color(0xFFC084FC) else Color(0xFF6B7280),
+                                        color = if (hasAiKey) Color(0xFFFF8087) else Color(0xFF6B7280),
                                         fontSize = 10.5.sp
                                     )
                                 }
@@ -458,14 +458,14 @@ fun CatalogEditorSheet(
                                 Icon(
                                     imageVector = if (isAiExpanded) Icons.Default.KeyboardArrowUp else Icons.Default.KeyboardArrowDown,
                                     contentDescription = null,
-                                    tint = Color(0xFFA855F7),
+                                    tint = Color(0xFFFB515B),
                                     modifier = Modifier.size(20.dp)
                                 )
                             } else {
                                 Box(
                                     modifier = Modifier
                                         .clip(RoundedCornerShape(8.dp))
-                                        .background(Color(0xFF252731))
+                                        .background(Color(0xFF2F2727))
                                         .padding(horizontal = 8.dp, vertical = 4.dp)
                                 ) {
                                     Text(
@@ -505,10 +505,10 @@ fun CatalogEditorSheet(
                                         .heightIn(min = 80.dp),
                                     shape = RoundedCornerShape(12.dp),
                                     colors = OutlinedTextFieldDefaults.colors(
-                                        focusedContainerColor = Color(0xFF110E1A),
-                                        unfocusedContainerColor = Color(0xFF110E1A),
-                                        focusedBorderColor = Color(0xFFA855F7),
-                                        unfocusedBorderColor = Color(0xFF382554),
+                                        focusedContainerColor = Color(0xFF1A0E0E),
+                                        unfocusedContainerColor = Color(0xFF1A0E0E),
+                                        focusedBorderColor = Color(0xFFFB515B),
+                                        unfocusedBorderColor = Color(0xFF552427),
                                         focusedTextColor = Color.White,
                                         unfocusedTextColor = Color.White
                                     )
@@ -525,8 +525,8 @@ fun CatalogEditorSheet(
                                         Box(
                                             modifier = Modifier
                                                 .clip(RoundedCornerShape(14.dp))
-                                                .background(Color(0xFF221736))
-                                                .border(BorderStroke(1.dp, Color(0xFF4C2882)), RoundedCornerShape(14.dp))
+                                                .background(Color(0xFF371618))
+                                                .border(BorderStroke(1.dp, Color(0xFF84262B)), RoundedCornerShape(14.dp))
                                                 .clickable {
                                                     haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
                                                     aiPrompt = sample
@@ -535,7 +535,7 @@ fun CatalogEditorSheet(
                                         ) {
                                             Text(
                                                 text = sample,
-                                                color = Color(0xFFE9D5FF),
+                                                color = Color(0xFFFF8087),
                                                 fontSize = 11.sp,
                                                 maxLines = 1
                                             )
@@ -593,8 +593,8 @@ fun CatalogEditorSheet(
                                     },
                                     enabled = aiPrompt.isNotBlank() && !isGeneratingAi,
                                     colors = ButtonDefaults.buttonColors(
-                                        containerColor = Color(0xFFA855F7),
-                                        disabledContainerColor = Color(0xFF332049)
+                                        containerColor = Color(0xFFFB515B),
+                                        disabledContainerColor = Color(0xFF4A1F22)
                                     ),
                                     shape = RoundedCornerShape(12.dp),
                                     modifier = Modifier.fillMaxWidth()
@@ -632,8 +632,8 @@ fun CatalogEditorSheet(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(14.dp))
-                            .background(Color(0xFF16171B))
-                            .border(BorderStroke(1.dp, Color(0xFF282A31)), RoundedCornerShape(14.dp))
+                            .background(Color(0xFF1B1616))
+                            .border(BorderStroke(1.dp, Color(0xFF312828)), RoundedCornerShape(14.dp))
                             .padding(4.dp),
                         horizontalArrangement = Arrangement.spacedBy(4.dp)
                     ) {
@@ -643,7 +643,7 @@ fun CatalogEditorSheet(
                                 modifier = Modifier
                                     .weight(1f)
                                     .clip(RoundedCornerShape(10.dp))
-                                    .background(if (isSelected) Color(0xFFA855F7) else Color.Transparent)
+                                    .background(if (isSelected) Color(0xFFFB515B) else Color.Transparent)
                                     .clickable {
                                         haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
                                         mediaType = typeKey
@@ -667,8 +667,8 @@ fun CatalogEditorSheet(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(14.dp))
-                        .background(Color(0xFF181A22))
-                        .border(BorderStroke(1.dp, Color(0xFF282C3A)), RoundedCornerShape(14.dp))
+                        .background(Color(0xFF201A1A))
+                        .border(BorderStroke(1.dp, Color(0xFF362C2C)), RoundedCornerShape(14.dp))
                         .padding(horizontal = 14.dp, vertical = 10.dp),
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
@@ -711,12 +711,12 @@ fun CatalogEditorSheet(
                         Icon(
                             imageVector = Icons.Default.PushPin,
                             contentDescription = "Pin to Home",
-                            tint = if (pinToHome) Color(0xFFA855F7) else Color(0xFF6B7280),
+                            tint = if (pinToHome) Color(0xFFFB515B) else Color(0xFF6B7280),
                             modifier = Modifier.size(15.dp)
                         )
                         Text(
                             text = if (pinToHome) "Pinned" else "Pin",
-                            color = if (pinToHome) Color(0xFFA855F7) else Color(0xFF6B7280),
+                            color = if (pinToHome) Color(0xFFFB515B) else Color(0xFF6B7280),
                             fontFamily = NdotFont,
                             fontSize = 11.sp,
                             maxLines = 1,
@@ -730,8 +730,8 @@ fun CatalogEditorSheet(
                     modifier = Modifier
                         .fillMaxWidth()
                         .clip(RoundedCornerShape(18.dp))
-                        .border(BorderStroke(1.dp, Color(0xFF282A31)), RoundedCornerShape(18.dp)),
-                    colors = CardDefaults.cardColors(containerColor = Color(0xFF16171B)),
+                        .border(BorderStroke(1.dp, Color(0xFF312828)), RoundedCornerShape(18.dp)),
+                    colors = CardDefaults.cardColors(containerColor = Color(0xFF1B1616)),
                     shape = RoundedCornerShape(18.dp)
                 ) {
                     Column(
@@ -758,7 +758,7 @@ fun CatalogEditorSheet(
                                 Icon(
                                     imageVector = Icons.Default.Tune,
                                     contentDescription = null,
-                                    tint = Color(0xFFA855F7),
+                                    tint = Color(0xFFFB515B),
                                     modifier = Modifier.size(18.dp)
                                 )
                                 Text(
@@ -805,8 +805,8 @@ fun CatalogEditorSheet(
                                                 modifier = Modifier
                                                     .fillMaxWidth()
                                                     .clip(RoundedCornerShape(12.dp))
-                                                    .background(Color(0xFF201830))
-                                                    .border(BorderStroke(1.dp, Color(0xFF5B21B6)), RoundedCornerShape(12.dp))
+                                                    .background(Color(0xFF311719))
+                                                    .border(BorderStroke(1.dp, Color(0xFFBA1D27)), RoundedCornerShape(12.dp))
                                                     .padding(horizontal = 12.dp, vertical = 8.dp),
                                                 verticalAlignment = Alignment.CenterVertically,
                                                 horizontalArrangement = Arrangement.SpaceBetween
@@ -820,7 +820,7 @@ fun CatalogEditorSheet(
                                                             modifier = Modifier
                                                                 .size(36.dp)
                                                                 .clip(CircleShape)
-                                                                .border(BorderStroke(1.dp, Color(0xFFA855F7)), CircleShape)
+                                                                .border(BorderStroke(1.dp, Color(0xFFFB515B)), CircleShape)
                                                         ) {
                                                             RemoteImage(
                                                                 url = if (selectedPersonProfilePath!!.startsWith("http")) selectedPersonProfilePath else "https://image.tmdb.org/t/p/w185$selectedPersonProfilePath",
@@ -833,13 +833,13 @@ fun CatalogEditorSheet(
                                                             modifier = Modifier
                                                                 .size(36.dp)
                                                                 .clip(CircleShape)
-                                                                .background(Color(0xFF382054)),
+                                                                .background(Color(0xFF551F22)),
                                                             contentAlignment = Alignment.Center
                                                         ) {
                                                             Icon(
                                                                 imageVector = Icons.Default.Person,
                                                                 contentDescription = null,
-                                                                tint = Color(0xFFE9D5FF),
+                                                                tint = Color(0xFFFF8087),
                                                                 modifier = Modifier.size(18.dp)
                                                             )
                                                         }
@@ -854,7 +854,7 @@ fun CatalogEditorSheet(
                                                         )
                                                         Text(
                                                             text = "Tagged Person",
-                                                            color = Color(0xFFA855F7),
+                                                            color = Color(0xFFFB515B),
                                                             fontFamily = NdotFont,
                                                             fontSize = 9.5.sp
                                                         )
@@ -896,16 +896,16 @@ fun CatalogEditorSheet(
                                                 modifier = Modifier.fillMaxWidth(),
                                                 shape = RoundedCornerShape(12.dp),
                                                 colors = OutlinedTextFieldDefaults.colors(
-                                                    focusedContainerColor = Color(0xFF1B1C22),
-                                                    unfocusedContainerColor = Color(0xFF1B1C22),
-                                                    focusedBorderColor = Color(0xFFA855F7),
-                                                    unfocusedBorderColor = Color(0xFF282A31),
+                                                    focusedContainerColor = Color(0xFF221B1B),
+                                                    unfocusedContainerColor = Color(0xFF221B1B),
+                                                    focusedBorderColor = Color(0xFFFB515B),
+                                                    unfocusedBorderColor = Color(0xFF312828),
                                                     focusedTextColor = Color.White,
                                                     unfocusedTextColor = Color.White
                                                 ),
                                                 trailingIcon = {
                                                     if (isSearchingPeople) {
-                                                        CircularProgressIndicator(modifier = Modifier.size(14.dp), strokeWidth = 2.dp, color = Color(0xFFA855F7))
+                                                        CircularProgressIndicator(modifier = Modifier.size(14.dp), strokeWidth = 2.dp, color = Color(0xFFFB515B))
                                                     } else if (personQuery.isNotBlank()) {
                                                         IconButton(onClick = { personQuery = "" }) {
                                                             Icon(imageVector = Icons.Default.Close, contentDescription = "Clear", tint = Color(0xFF9CA3AF), modifier = Modifier.size(16.dp))
@@ -920,7 +920,7 @@ fun CatalogEditorSheet(
                                                     modifier = Modifier
                                                         .fillMaxWidth()
                                                         .clip(RoundedCornerShape(12.dp))
-                                                        .background(Color(0xFF20222A))
+                                                        .background(Color(0xFF292121))
                                                         .padding(6.dp),
                                                     verticalArrangement = Arrangement.spacedBy(4.dp)
                                                 ) {
@@ -962,7 +962,7 @@ fun CatalogEditorSheet(
                                                                         modifier = Modifier
                                                                             .size(28.dp)
                                                                             .clip(CircleShape)
-                                                                            .background(Color(0xFF2D2E38)),
+                                                                            .background(Color(0xFF382D2D)),
                                                                         contentAlignment = Alignment.Center
                                                                     ) {
                                                                         Icon(Icons.Default.Person, contentDescription = null, tint = Color.Gray, modifier = Modifier.size(16.dp))
@@ -970,7 +970,7 @@ fun CatalogEditorSheet(
                                                                 }
                                                                 Text(text = p.name, color = Color.White, fontSize = 12.5.sp, fontWeight = FontWeight.Medium)
                                                             }
-                                                            Text(text = p.department ?: "Actor / Crew", color = Color(0xFFA855F7), fontSize = 10.5.sp)
+                                                            Text(text = p.department ?: "Actor / Crew", color = Color(0xFFFB515B), fontSize = 10.5.sp)
                                                         }
                                                     }
                                                 }
@@ -993,8 +993,8 @@ fun CatalogEditorSheet(
                                                 modifier = Modifier
                                                     .fillMaxWidth()
                                                     .clip(RoundedCornerShape(12.dp))
-                                                    .background(Color(0xFF201830))
-                                                    .border(BorderStroke(1.dp, Color(0xFF5B21B6)), RoundedCornerShape(12.dp))
+                                                    .background(Color(0xFF311719))
+                                                    .border(BorderStroke(1.dp, Color(0xFFBA1D27)), RoundedCornerShape(12.dp))
                                                     .padding(horizontal = 12.dp, vertical = 8.dp),
                                                 verticalAlignment = Alignment.CenterVertically,
                                                 horizontalArrangement = Arrangement.SpaceBetween
@@ -1008,7 +1008,7 @@ fun CatalogEditorSheet(
                                                             modifier = Modifier
                                                                 .size(36.dp)
                                                                 .clip(RoundedCornerShape(8.dp))
-                                                                .background(Color(0xFF16171B))
+                                                                .background(Color(0xFF1B1616))
                                                                 .padding(4.dp),
                                                             contentAlignment = Alignment.Center
                                                         ) {
@@ -1023,13 +1023,13 @@ fun CatalogEditorSheet(
                                                             modifier = Modifier
                                                                 .size(36.dp)
                                                                 .clip(CircleShape)
-                                                                .background(Color(0xFF382054)),
+                                                                .background(Color(0xFF551F22)),
                                                             contentAlignment = Alignment.Center
                                                         ) {
                                                             Icon(
                                                                 imageVector = Icons.Default.Business,
                                                                 contentDescription = null,
-                                                                tint = Color(0xFFE9D5FF),
+                                                                tint = Color(0xFFFF8087),
                                                                 modifier = Modifier.size(18.dp)
                                                             )
                                                         }
@@ -1044,7 +1044,7 @@ fun CatalogEditorSheet(
                                                         )
                                                         Text(
                                                             text = "Tagged Studio / Network",
-                                                            color = Color(0xFFA855F7),
+                                                            color = Color(0xFFFB515B),
                                                             fontFamily = NdotFont,
                                                             fontSize = 9.5.sp
                                                         )
@@ -1086,16 +1086,16 @@ fun CatalogEditorSheet(
                                                 modifier = Modifier.fillMaxWidth(),
                                                 shape = RoundedCornerShape(12.dp),
                                                 colors = OutlinedTextFieldDefaults.colors(
-                                                    focusedContainerColor = Color(0xFF1B1C22),
-                                                    unfocusedContainerColor = Color(0xFF1B1C22),
-                                                    focusedBorderColor = Color(0xFFA855F7),
-                                                    unfocusedBorderColor = Color(0xFF282A31),
+                                                    focusedContainerColor = Color(0xFF221B1B),
+                                                    unfocusedContainerColor = Color(0xFF221B1B),
+                                                    focusedBorderColor = Color(0xFFFB515B),
+                                                    unfocusedBorderColor = Color(0xFF312828),
                                                     focusedTextColor = Color.White,
                                                     unfocusedTextColor = Color.White
                                                 ),
                                                 trailingIcon = {
                                                     if (isSearchingStudio) {
-                                                        CircularProgressIndicator(modifier = Modifier.size(14.dp), strokeWidth = 2.dp, color = Color(0xFFA855F7))
+                                                        CircularProgressIndicator(modifier = Modifier.size(14.dp), strokeWidth = 2.dp, color = Color(0xFFFB515B))
                                                     } else if (studioQuery.isNotBlank()) {
                                                         IconButton(onClick = { studioQuery = "" }) {
                                                             Icon(imageVector = Icons.Default.Close, contentDescription = "Clear", tint = Color(0xFF9CA3AF), modifier = Modifier.size(16.dp))
@@ -1110,7 +1110,7 @@ fun CatalogEditorSheet(
                                                     modifier = Modifier
                                                         .fillMaxWidth()
                                                         .clip(RoundedCornerShape(12.dp))
-                                                        .background(Color(0xFF20222A))
+                                                        .background(Color(0xFF292121))
                                                         .padding(6.dp),
                                                     verticalArrangement = Arrangement.spacedBy(4.dp)
                                                 ) {
@@ -1140,7 +1140,7 @@ fun CatalogEditorSheet(
                                                                         modifier = Modifier
                                                                             .size(26.dp)
                                                                             .clip(RoundedCornerShape(4.dp))
-                                                                            .background(Color(0xFF16171B))
+                                                                            .background(Color(0xFF1B1616))
                                                                             .padding(2.dp),
                                                                         contentAlignment = Alignment.Center
                                                                     ) {
@@ -1154,7 +1154,7 @@ fun CatalogEditorSheet(
                                                                     Icon(
                                                                         imageVector = Icons.Default.Business,
                                                                         contentDescription = null,
-                                                                        tint = Color(0xFFA855F7),
+                                                                        tint = Color(0xFFFB515B),
                                                                         modifier = Modifier.size(18.dp)
                                                                     )
                                                                 }
@@ -1167,7 +1167,7 @@ fun CatalogEditorSheet(
                                                             }
                                                             Text(
                                                                 text = "Studio",
-                                                                color = Color(0xFFA855F7),
+                                                                color = Color(0xFFFB515B),
                                                                 fontSize = 10.5.sp
                                                             )
                                                         }
@@ -1201,9 +1201,9 @@ fun CatalogEditorSheet(
                                                 },
                                                 label = { Text(genre, fontSize = 11.sp) },
                                                 colors = FilterChipDefaults.filterChipColors(
-                                                    selectedContainerColor = Color(0xFFA855F7),
+                                                    selectedContainerColor = Color(0xFFFB515B),
                                                     selectedLabelColor = Color.White,
-                                                    containerColor = Color(0xFF1F2027),
+                                                    containerColor = Color(0xFF272020),
                                                     labelColor = Color(0xFFD1D5DB)
                                                 )
                                             )
@@ -1245,9 +1245,9 @@ fun CatalogEditorSheet(
                                                 },
                                                 label = { Text(lang, fontSize = 11.sp) },
                                                 colors = FilterChipDefaults.filterChipColors(
-                                                    selectedContainerColor = Color(0xFFA855F7),
+                                                    selectedContainerColor = Color(0xFFFB515B),
                                                     selectedLabelColor = Color.White,
-                                                    containerColor = Color(0xFF1F2027),
+                                                    containerColor = Color(0xFF272020),
                                                     labelColor = Color(0xFFD1D5DB)
                                                 )
                                             )
@@ -1274,8 +1274,8 @@ fun CatalogEditorSheet(
                                             onCheckedChange = { ratingFilterEnabled = it },
                                             colors = SwitchDefaults.colors(
                                                 checkedThumbColor = Color.White,
-                                                checkedTrackColor = Color(0xFFA855F7),
-                                                uncheckedTrackColor = Color(0xFF282A31)
+                                                checkedTrackColor = Color(0xFFFB515B),
+                                                uncheckedTrackColor = Color(0xFF312828)
                                             )
                                         )
                                     }
@@ -1290,9 +1290,9 @@ fun CatalogEditorSheet(
                                             valueRange = 0f..10f,
                                             steps = 19,
                                             colors = SliderDefaults.colors(
-                                                thumbColor = Color(0xFFA855F7),
-                                                activeTrackColor = Color(0xFFA855F7),
-                                                inactiveTrackColor = Color(0xFF2D2E36)
+                                                thumbColor = Color(0xFFFB515B),
+                                                activeTrackColor = Color(0xFFFB515B),
+                                                inactiveTrackColor = Color(0xFF362D2D)
                                             )
                                         )
                                     }
@@ -1317,8 +1317,8 @@ fun CatalogEditorSheet(
                                             onCheckedChange = { yearFilterEnabled = it },
                                             colors = SwitchDefaults.colors(
                                                 checkedThumbColor = Color.White,
-                                                checkedTrackColor = Color(0xFFA855F7),
-                                                uncheckedTrackColor = Color(0xFF282A31)
+                                                checkedTrackColor = Color(0xFFFB515B),
+                                                uncheckedTrackColor = Color(0xFF312828)
                                             )
                                         )
                                     }
@@ -1333,9 +1333,9 @@ fun CatalogEditorSheet(
                                             valueRange = 1970f..2026f,
                                             steps = 55,
                                             colors = SliderDefaults.colors(
-                                                thumbColor = Color(0xFFA855F7),
-                                                activeTrackColor = Color(0xFFA855F7),
-                                                inactiveTrackColor = Color(0xFF2D2E36)
+                                                thumbColor = Color(0xFFFB515B),
+                                                activeTrackColor = Color(0xFFFB515B),
+                                                inactiveTrackColor = Color(0xFF362D2D)
                                             )
                                         )
                                     }
@@ -1374,9 +1374,9 @@ fun CatalogEditorSheet(
                                                     )
                                                 },
                                                 colors = FilterChipDefaults.filterChipColors(
-                                                    selectedContainerColor = Color(0xFFA855F7),
+                                                    selectedContainerColor = Color(0xFFFB515B),
                                                     selectedLabelColor = Color.White,
-                                                    containerColor = Color(0xFF1F2027),
+                                                    containerColor = Color(0xFF272020),
                                                     labelColor = Color(0xFFD1D5DB)
                                                 )
                                             )
@@ -1420,7 +1420,7 @@ fun CatalogEditorSheet(
                         onDismiss()
                         viewModel.selectTab(AppTab.SETTINGS)
                     },
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFA855F7)),
+                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFFB515B)),
                     shape = RoundedCornerShape(12.dp)
                 ) {
                     Text("Go to Settings →", color = Color.White, fontFamily = NdotFont, fontSize = 12.5.sp)
@@ -1431,7 +1431,7 @@ fun CatalogEditorSheet(
                     Text("Not Now", color = Color(0xFF9CA3AF), fontSize = 12.5.sp)
                 }
             },
-            containerColor = Color(0xFF1E1F24),
+            containerColor = Color(0xFF241E1E),
             shape = RoundedCornerShape(20.dp)
         )
     }

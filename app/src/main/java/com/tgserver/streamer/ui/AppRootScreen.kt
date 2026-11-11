@@ -239,14 +239,14 @@ private fun FloatingCloudSyncPill(
     val borderColor = when (progress.isSuccess) {
         true -> Color(0xFF2ECC71).copy(alpha = 0.55f)
         false -> Color(0xFFE74C3C).copy(alpha = 0.55f)
-        null -> Color(0xFFA855F7).copy(alpha = 0.55f)
+        null -> Color(0xFFFB515B).copy(alpha = 0.55f)
     }
 
     Box(
         modifier = Modifier
             .shadow(16.dp, RoundedCornerShape(24.dp), spotColor = Color.Black)
             .clip(RoundedCornerShape(24.dp))
-            .background(Color(0xF0121217))
+            .background(Color(0xF0171212))
             .border(BorderStroke(1.dp, borderColor), RoundedCornerShape(24.dp))
             .clickable {
                 haptic.performHapticFeedback(HapticFeedbackType.LongPress)
@@ -261,7 +261,7 @@ private fun FloatingCloudSyncPill(
             if (progress.isSyncing) {
                 CircularProgressIndicator(
                     modifier = Modifier.size(13.dp),
-                    color = Color(0xFFA855F7),
+                    color = Color(0xFFFB515B),
                     strokeWidth = 2.dp
                 )
             } else if (progress.isSuccess == true) {
@@ -384,8 +384,8 @@ private fun MinimalFloatingNavDock(
                 .background(
                     Brush.verticalGradient(
                         colors = listOf(
-                            Color(0xF7151722),
-                            Color(0xFD0D0E14)
+                            Color(0xF71E1919),
+                            Color(0xFD120F0F)
                         )
                     )
                 )
@@ -641,7 +641,7 @@ private fun MinimalNavItem(
                     modifier = Modifier
                         .size(28.dp)
                         .clip(CircleShape)
-                        .background(Color(0xFF1E2028))
+                        .background(Color(0xFF272020))
                         .border(
                             width = if (closeness > 0.5f) 1.8.dp else 1.dp,
                             color = if (closeness > 0.5f) Color.White else Color.White.copy(alpha = 0.25f),

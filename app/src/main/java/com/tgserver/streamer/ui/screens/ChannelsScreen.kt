@@ -108,7 +108,7 @@ fun ChannelsScreen(viewModel: MainAppViewModel) {
                     letterSpacing = 0.5.sp
                 )
                 Text(
-                    text = "NoxMedia • Telegram",
+                    text = "MysticFlix • Telegram",
                     color = Color(0xFF6B7280),
                     fontFamily = FontFamily.Monospace,
                     fontSize = 10.5.sp,
@@ -123,8 +123,8 @@ fun ChannelsScreen(viewModel: MainAppViewModel) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .clip(RoundedCornerShape(20.dp))
-                    .background(Color(0xFF141416))
-                    .border(1.dp, Color(0xFF22232A), RoundedCornerShape(20.dp))
+                    .background(Color(0xFF171313))
+                    .border(1.dp, Color(0xFF2A2222), RoundedCornerShape(20.dp))
                     .padding(16.dp)
             ) {
                 Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -141,8 +141,8 @@ fun ChannelsScreen(viewModel: MainAppViewModel) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(12.dp))
-                            .background(Color(0xFF0C0D10))
-                            .border(1.dp, Color(0xFF1E2028), RoundedCornerShape(12.dp))
+                            .background(Color(0xFF0F0D0D))
+                            .border(1.dp, Color(0xFF272020), RoundedCornerShape(12.dp))
                             .padding(horizontal = 14.dp, vertical = 13.dp)
                     ) {
                         Row(
@@ -245,16 +245,16 @@ fun ChannelsScreen(viewModel: MainAppViewModel) {
                                 .clip(RoundedCornerShape(14.dp))
                                 .background(
                                     if (channelInput.isNotBlank() && !isAddingChannel)
-                                        Color(0xFF252730)
+                                        Color(0xFF2F2626)
                                     else
-                                        Color(0xFF191A20)
+                                        Color(0xFF1F1A1A)
                                 )
                                 .border(
                                     1.dp,
                                     if (channelInput.isNotBlank() && !isAddingChannel)
                                         Color(0xFF424555)
                                     else
-                                        Color(0xFF2A2C38),
+                                        Color(0xFF362C2C),
                                     RoundedCornerShape(14.dp)
                                 )
                                 .clickable(enabled = channelInput.isNotBlank() && !isAddingChannel) {
@@ -308,8 +308,8 @@ fun ChannelsScreen(viewModel: MainAppViewModel) {
                                 .fillMaxWidth()
                                 .padding(top = 4.dp)
                                 .clip(RoundedCornerShape(8.dp))
-                                .background(Color(0xFF161820))
-                                .border(1.dp, Color(0xFF242732), RoundedCornerShape(8.dp))
+                                .background(Color(0xFF1E1818))
+                                .border(1.dp, Color(0xFF2F2727), RoundedCornerShape(8.dp))
                                 .padding(horizontal = 10.dp, vertical = 8.dp)
                         ) {
                             Text(
@@ -330,8 +330,8 @@ fun ChannelsScreen(viewModel: MainAppViewModel) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .clip(RoundedCornerShape(20.dp))
-                    .background(Color(0xFF141416))
-                    .border(1.dp, Color(0xFF22232A), RoundedCornerShape(20.dp))
+                    .background(Color(0xFF171313))
+                    .border(1.dp, Color(0xFF2A2222), RoundedCornerShape(20.dp))
                     .padding(16.dp)
             ) {
                 Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -354,7 +354,7 @@ fun ChannelsScreen(viewModel: MainAppViewModel) {
                                 modifier = Modifier
                                     .height(24.dp)
                                     .clip(RoundedCornerShape(12.dp))
-                                    .background(if (isScanningAll) Color(0xFF1F2920) else Color(0xFF1B1C22))
+                                    .background(if (isScanningAll) Color(0xFF1F2920) else Color(0xFF221B1B))
                                     .border(
                                         1.dp,
                                         if (isScanningAll) Color(0xFF10B981) else Color(0xFF2E303D),
@@ -407,8 +407,8 @@ fun ChannelsScreen(viewModel: MainAppViewModel) {
                             modifier = Modifier
                                 .fillMaxWidth()
                                 .clip(RoundedCornerShape(12.dp))
-                                .background(Color(0xFF0C0D10))
-                                .border(1.dp, Color(0xFF1E2028), RoundedCornerShape(12.dp))
+                                .background(Color(0xFF0F0D0D))
+                                .border(1.dp, Color(0xFF272020), RoundedCornerShape(12.dp))
                                 .padding(24.dp),
                             contentAlignment = Alignment.Center
                         ) {
@@ -464,8 +464,8 @@ fun ChannelsScreen(viewModel: MainAppViewModel) {
                 modifier = Modifier
                     .fillMaxWidth()
                     .clip(RoundedCornerShape(20.dp))
-                    .background(Color(0xFF141416))
-                    .border(1.dp, Color(0xFF22232A), RoundedCornerShape(20.dp))
+                    .background(Color(0xFF171313))
+                    .border(1.dp, Color(0xFF2A2222), RoundedCornerShape(20.dp))
                     .padding(16.dp)
             ) {
                 Column(verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -487,7 +487,7 @@ fun ChannelsScreen(viewModel: MainAppViewModel) {
                             modifier = Modifier
                                 .height(24.dp)
                                 .clip(RoundedCornerShape(12.dp))
-                                .background(Color(0xFF1B1C22))
+                                .background(Color(0xFF221B1B))
                                 .border(1.dp, Color(0xFF2E303D), RoundedCornerShape(12.dp))
                                 .clickable {
                                     haptic.performHapticFeedback(HapticFeedbackType.LongPress)
@@ -510,8 +510,8 @@ fun ChannelsScreen(viewModel: MainAppViewModel) {
                         modifier = Modifier
                             .fillMaxWidth()
                             .clip(RoundedCornerShape(12.dp))
-                            .background(Color(0xFF0C0D10))
-                            .border(1.dp, Color(0xFF1E2028), RoundedCornerShape(12.dp))
+                            .background(Color(0xFF0F0D0D))
+                            .border(1.dp, Color(0xFF272020), RoundedCornerShape(12.dp))
                             .padding(12.dp)
                     ) {
                         if (unmatchedMedia.isEmpty()) {
@@ -550,8 +550,8 @@ fun ChannelsScreen(viewModel: MainAppViewModel) {
                                             Box(
                                                 modifier = Modifier
                                                     .clip(RoundedCornerShape(10.dp))
-                                                    .background(Color(0xFF17181F))
-                                                    .border(1.dp, Color(0xFF282A35), RoundedCornerShape(10.dp))
+                                                    .background(Color(0xFF1E1818))
+                                                    .border(1.dp, Color(0xFF332A2A), RoundedCornerShape(10.dp))
                                                     .padding(horizontal = 7.dp, vertical = 2.dp)
                                             ) {
                                                 Text(
@@ -665,10 +665,10 @@ private fun ChannelItemCard(
         modifier = Modifier
             .fillMaxWidth()
             .clip(RoundedCornerShape(14.dp))
-            .background(Color(0xFF1B1C22))
+            .background(Color(0xFF221B1B))
             .border(
                 1.dp,
-                if (isScanning) Color(0xFF10B981).copy(alpha = 0.7f) else Color(0xFF282A34),
+                if (isScanning) Color(0xFF10B981).copy(alpha = 0.7f) else Color(0xFF332929),
                 RoundedCornerShape(14.dp)
             )
     ) {
@@ -719,7 +719,7 @@ private fun ChannelItemCard(
                                     Box(
                                         modifier = Modifier
                                             .clip(RoundedCornerShape(6.dp))
-                                            .background(Color(0xFF242630))
+                                            .background(Color(0xFF2E2626))
                                             .border(1.dp, Color(0xFF404455), RoundedCornerShape(6.dp))
                                             .padding(horizontal = 6.dp, vertical = 1.dp)
                                     ) {
@@ -768,7 +768,7 @@ private fun ChannelItemCard(
                             expanded = menuExpanded,
                             onDismissRequest = { menuExpanded = false },
                             modifier = Modifier
-                                .background(Color(0xFF1E2028))
+                                .background(Color(0xFF272020))
                                 .border(1.dp, Color(0xFF323647), RoundedCornerShape(12.dp))
                         ) {
                             DropdownMenuItem(
@@ -784,7 +784,7 @@ private fun ChannelItemCard(
                                     Icon(
                                         imageVector = Icons.Default.Refresh,
                                         contentDescription = null,
-                                        tint = Color(0xFFC084FC),
+                                        tint = Color(0xFFFF8087),
                                         modifier = Modifier.size(15.dp)
                                     )
                                 },
@@ -937,7 +937,7 @@ private fun ChannelItemCard(
                         modifier = Modifier
                             .height(28.dp)
                             .clip(RoundedCornerShape(14.dp))
-                            .background(if (isScanning) Color(0xFF15261C) else Color(0xFF22242D))
+                            .background(if (isScanning) Color(0xFF15261C) else Color(0xFF2B2424))
                             .border(
                                 1.dp,
                                 if (isScanning) Color(0xFF10B981) else Color(0xFF353846),
@@ -1027,7 +1027,7 @@ private fun ChannelAvatar(
         modifier = modifier
             .size(44.dp)
             .clip(CircleShape)
-            .background(Color(0xFF262832))
+            .background(Color(0xFF302828))
             .border(
                 1.dp,
                 if (isScanning) Color(0xFF10B981) else Color(0xFF383A46),
@@ -1115,7 +1115,7 @@ private fun UnmatchedContentBottomSheet(
 
     ModalBottomSheet(
         onDismissRequest = onDismiss,
-        containerColor = Color(0xFF101117),
+        containerColor = Color(0xFF151212),
         tonalElevation = 0.dp,
         shape = RoundedCornerShape(topStart = 24.dp, topEnd = 24.dp),
         contentWindowInsets = { WindowInsets(0, 0, 0, 0) },
@@ -1182,7 +1182,7 @@ private fun UnmatchedContentBottomSheet(
                         Box(
                             modifier = Modifier
                                 .clip(RoundedCornerShape(8.dp))
-                                .background(Color(0xFF1E212E))
+                                .background(Color(0xFF2A2222))
                                 .border(1.dp, Color(0xFF33384B), RoundedCornerShape(8.dp))
                                 .clickable {
                                     haptic.performHapticFeedback(HapticFeedbackType.LongPress)
@@ -1198,7 +1198,7 @@ private fun UnmatchedContentBottomSheet(
                         ) {
                             Text(
                                 text = if (allFilteredSelected) "DESELECT ALL" else "SELECT ALL",
-                                color = Color(0xFFC084FC),
+                                color = Color(0xFFFF8087),
                                 fontFamily = NdotFont,
                                 fontSize = 10.sp,
                                 fontWeight = FontWeight.Bold
@@ -1259,7 +1259,7 @@ private fun UnmatchedContentBottomSheet(
                             Box(
                                 modifier = Modifier
                                     .clip(RoundedCornerShape(8.dp))
-                                    .background(Color(0xFF1E212E))
+                                    .background(Color(0xFF2A2222))
                                     .border(1.dp, Color(0xFF33384B), RoundedCornerShape(8.dp))
                                     .clickable {
                                         haptic.performHapticFeedback(HapticFeedbackType.LongPress)
@@ -1274,12 +1274,12 @@ private fun UnmatchedContentBottomSheet(
                                     Icon(
                                         imageVector = Icons.Default.Checklist,
                                         contentDescription = "Select",
-                                        tint = Color(0xFFC084FC),
+                                        tint = Color(0xFFFF8087),
                                         modifier = Modifier.size(13.dp)
                                     )
                                     Text(
                                         text = "SELECT",
-                                        color = Color(0xFFC084FC),
+                                        color = Color(0xFFFF8087),
                                         fontFamily = NdotFont,
                                         fontSize = 10.sp,
                                         fontWeight = FontWeight.Bold
@@ -1320,8 +1320,8 @@ private fun UnmatchedContentBottomSheet(
                 modifier = Modifier
                     .fillMaxWidth()
                     .clip(RoundedCornerShape(12.dp))
-                    .background(Color(0xFF181A24))
-                    .border(1.dp, Color(0xFF282B3A), RoundedCornerShape(12.dp))
+                    .background(Color(0xFF211B1B))
+                    .border(1.dp, Color(0xFF362C2C), RoundedCornerShape(12.dp))
                     .padding(horizontal = 12.dp, vertical = 8.dp)
             ) {
                 Row(
@@ -1348,7 +1348,7 @@ private fun UnmatchedContentBottomSheet(
                             value = searchQuery,
                             onValueChange = { searchQuery = it },
                             singleLine = true,
-                            cursorBrush = SolidColor(Color(0xFFC084FC)),
+                            cursorBrush = SolidColor(Color(0xFFFF8087)),
                             textStyle = TextStyle(
                                 color = Color.White,
                                 fontSize = 12.5.sp,
@@ -1387,10 +1387,10 @@ private fun UnmatchedContentBottomSheet(
                     Box(
                         modifier = Modifier
                             .clip(RoundedCornerShape(8.dp))
-                            .background(if (isSelected) Color(0xFF7C3AED) else Color(0xFF181A24))
+                            .background(if (isSelected) Color(0xFFF13641) else Color(0xFF211B1B))
                             .border(
                                 1.dp,
-                                if (isSelected) Color(0xFFA855F7) else Color(0xFF282B3A),
+                                if (isSelected) Color(0xFFFB515B) else Color(0xFF362C2C),
                                 RoundedCornerShape(8.dp)
                             )
                             .clickable { selectedFilter = key }
@@ -1504,7 +1504,7 @@ private fun UnmatchedContentBottomSheet(
                         .fillMaxWidth()
                         .padding(bottom = 12.dp),
                     shape = RoundedCornerShape(16.dp),
-                    color = Color(0xFF181A24),
+                    color = Color(0xFF211B1B),
                     border = BorderStroke(1.dp, Color(0xFF2E3244)),
                     shadowElevation = 8.dp
                 ) {
@@ -1525,8 +1525,8 @@ private fun UnmatchedContentBottomSheet(
                             },
                             enabled = selectedItemIds.isNotEmpty(),
                             colors = ButtonDefaults.buttonColors(
-                                containerColor = Color(0xFF7C3AED),
-                                disabledContainerColor = Color(0xFF28103F)
+                                containerColor = Color(0xFFF13641),
+                                disabledContainerColor = Color(0xFF400F12)
                             ),
                             shape = RoundedCornerShape(10.dp),
                             contentPadding = PaddingValues(horizontal = 12.dp, vertical = 8.dp)
@@ -1538,7 +1538,7 @@ private fun UnmatchedContentBottomSheet(
                                 Icon(
                                     imageVector = Icons.Default.Search,
                                     contentDescription = null,
-                                    tint = if (selectedItemIds.isNotEmpty()) Color.White else Color(0xFF8860B8),
+                                    tint = if (selectedItemIds.isNotEmpty()) Color.White else Color(0xFFBA5E63),
                                     modifier = Modifier.size(14.dp)
                                 )
                                 Text(
@@ -1546,7 +1546,7 @@ private fun UnmatchedContentBottomSheet(
                                     fontFamily = NdotFont,
                                     fontSize = 11.sp,
                                     fontWeight = FontWeight.Bold,
-                                    color = if (selectedItemIds.isNotEmpty()) Color.White else Color(0xFF8860B8)
+                                    color = if (selectedItemIds.isNotEmpty()) Color.White else Color(0xFFBA5E63)
                                 )
                             }
                         }
@@ -1662,7 +1662,7 @@ private fun UnmatchedContentBottomSheet(
                     Text("Cancel", color = Color(0xFF94A3B8))
                 }
             },
-            containerColor = Color(0xFF1E202B)
+            containerColor = Color(0xFF282121)
         )
     }
 
@@ -1704,7 +1704,7 @@ private fun UnmatchedContentBottomSheet(
                     Text("Cancel", color = Color(0xFF94A3B8))
                 }
             },
-            containerColor = Color(0xFF1E202B)
+            containerColor = Color(0xFF282121)
         )
     }
 
@@ -1743,13 +1743,13 @@ private fun UnmatchedItemCard(
     onDismiss: () -> Unit
 ) {
     val cardBorderColor = when {
-        isSelected -> Color(0xFFA855F7)
+        isSelected -> Color(0xFFFB515B)
         isSelectionMode -> Color(0xFF2E3244)
-        else -> Color(0xFF262938)
+        else -> Color(0xFF342A2A)
     }
     val cardBgColor = when {
-        isSelected -> Color(0xFF1C182B)
-        else -> Color(0xFF151720)
+        isSelected -> Color(0xFF2B1819)
+        else -> Color(0xFF1D1818)
     }
 
     Box(
@@ -1788,10 +1788,10 @@ private fun UnmatchedItemCard(
                                 .padding(top = 1.dp)
                                 .size(20.dp)
                                 .clip(CircleShape)
-                                .background(if (isSelected) Color(0xFFA855F7) else Color(0xFF1E212E))
+                                .background(if (isSelected) Color(0xFFFB515B) else Color(0xFF2A2222))
                                 .border(
                                     1.5.dp,
-                                    if (isSelected) Color(0xFFC084FC) else Color(0xFF474C65),
+                                    if (isSelected) Color(0xFFFF8087) else Color(0xFF474C65),
                                     CircleShape
                                 ),
                             contentAlignment = Alignment.Center
@@ -1809,7 +1809,7 @@ private fun UnmatchedItemCard(
                         Icon(
                             imageVector = if (item.isVideo) Icons.Default.Movie else Icons.Default.Description,
                             contentDescription = null,
-                            tint = if (item.isVideo) Color(0xFFC084FC) else Color(0xFF94A3B8),
+                            tint = if (item.isVideo) Color(0xFFFF8087) else Color(0xFF94A3B8),
                             modifier = Modifier
                                 .padding(top = 2.dp)
                                 .size(16.dp)
@@ -1865,12 +1865,12 @@ private fun UnmatchedItemCard(
                 Box(
                     modifier = Modifier
                         .clip(RoundedCornerShape(5.dp))
-                        .background(Color(0xFF1E212E))
+                        .background(Color(0xFF2A2222))
                         .padding(horizontal = 6.dp, vertical = 2.5.dp)
                 ) {
                     Text(
                         text = item.formattedSize,
-                        color = Color(0xFFC084FC),
+                        color = Color(0xFFFF8087),
                         fontFamily = FontFamily.Monospace,
                         fontSize = 9.5.sp,
                         fontWeight = FontWeight.Bold
@@ -1881,7 +1881,7 @@ private fun UnmatchedItemCard(
                 Box(
                     modifier = Modifier
                         .clip(RoundedCornerShape(5.dp))
-                        .background(Color(0xFF1E212E))
+                        .background(Color(0xFF2A2222))
                         .padding(horizontal = 6.dp, vertical = 2.5.dp)
                 ) {
                     Text(
@@ -1895,7 +1895,7 @@ private fun UnmatchedItemCard(
                 Box(
                     modifier = Modifier
                         .clip(RoundedCornerShape(5.dp))
-                        .background(Color(0xFF1E212E))
+                        .background(Color(0xFF2A2222))
                         .padding(horizontal = 6.dp, vertical = 2.5.dp)
                 ) {
                     Text(
@@ -1936,7 +1936,7 @@ private fun UnmatchedItemCard(
                 )
             }
 
-            HorizontalDivider(color = Color(0xFF202330), thickness = 1.dp)
+            HorizontalDivider(color = Color(0xFF2C2424), thickness = 1.dp)
 
             // Action Buttons Row (shown in normal mode)
             if (!isSelectionMode) {
@@ -1952,8 +1952,8 @@ private fun UnmatchedItemCard(
                                 modifier = Modifier
                                     .height(26.dp)
                                     .clip(RoundedCornerShape(6.dp))
-                                    .background(Color(0xFF28103F))
-                                    .border(1.dp, Color(0xFF7C3AED), RoundedCornerShape(6.dp))
+                                    .background(Color(0xFF400F12))
+                                    .border(1.dp, Color(0xFFF13641), RoundedCornerShape(6.dp))
                                     .clickable { onMatch() }
                                     .padding(horizontal = 8.dp),
                                 contentAlignment = Alignment.Center
@@ -1965,12 +1965,12 @@ private fun UnmatchedItemCard(
                                     Icon(
                                         imageVector = Icons.Default.Search,
                                         contentDescription = null,
-                                        tint = Color(0xFFC084FC),
+                                        tint = Color(0xFFFF8087),
                                         modifier = Modifier.size(11.dp)
                                     )
                                     Text(
                                         text = "MATCH METADATA",
-                                        color = Color(0xFFC084FC),
+                                        color = Color(0xFFFF8087),
                                         fontFamily = NdotFont,
                                         fontSize = 8.5.sp,
                                         fontWeight = FontWeight.Bold
@@ -2014,7 +2014,7 @@ private fun UnmatchedItemCard(
                                 modifier = Modifier
                                     .height(26.dp)
                                     .clip(RoundedCornerShape(6.dp))
-                                    .background(Color(0xFF1E212E))
+                                    .background(Color(0xFF2A2222))
                                     .border(1.dp, Color(0xFF33384B), RoundedCornerShape(6.dp))
                                     .clickable { onCopyLink() }
                                     .padding(horizontal = 8.dp),
@@ -2071,7 +2071,7 @@ private fun UnmatchedItemCard(
                 ) {
                     Text(
                         text = if (isSelected) "✓ Selected" else "Tap card to select",
-                        color = if (isSelected) Color(0xFFC084FC) else Color(0xFF64748B),
+                        color = if (isSelected) Color(0xFFFF8087) else Color(0xFF64748B),
                         fontSize = 11.sp,
                         fontWeight = if (isSelected) FontWeight.SemiBold else FontWeight.Normal
                     )
@@ -2144,7 +2144,7 @@ private fun ManualMatchCandidateDialog(
 
     AlertDialog(
         onDismissRequest = { if (!isAnyMatching) onDismiss() },
-        containerColor = Color(0xFF13141B),
+        containerColor = Color(0xFF191515),
         titleContentColor = Color.White,
         shape = RoundedCornerShape(18.dp),
         title = {
@@ -2196,7 +2196,7 @@ private fun ManualMatchCandidateDialog(
                         .fillMaxWidth()
                         .height(42.dp)
                         .clip(RoundedCornerShape(10.dp))
-                        .background(Color(0xFF1A1C25))
+                        .background(Color(0xFF231C1C))
                         .border(1.dp, Color(0xFF2E3242), RoundedCornerShape(10.dp))
                         .padding(horizontal = 12.dp),
                     contentAlignment = Alignment.CenterStart
@@ -2214,12 +2214,12 @@ private fun ManualMatchCandidateDialog(
                                 fontSize = 13.sp,
                                 fontFamily = FontFamily.Default
                             ),
-                            cursorBrush = SolidColor(Color(0xFFA855F7)),
+                            cursorBrush = SolidColor(Color(0xFFFB515B)),
                             modifier = Modifier.weight(1f)
                         )
                         if (isLoading) {
                             CircularProgressIndicator(
-                                color = Color(0xFFA855F7),
+                                color = Color(0xFFFB515B),
                                 modifier = Modifier.size(16.dp),
                                 strokeWidth = 2.dp
                             )
@@ -2255,10 +2255,10 @@ private fun ManualMatchCandidateDialog(
                             Box(
                                 modifier = Modifier
                                     .clip(RoundedCornerShape(8.dp))
-                                    .background(if (isSel) Color(0xFFA855F7) else Color(0xFF1E202B))
+                                    .background(if (isSel) Color(0xFFFB515B) else Color(0xFF282121))
                                     .border(
                                         1.dp,
-                                        if (isSel) Color(0xFFC084FC) else Color(0xFF2C2F3C),
+                                        if (isSel) Color(0xFFFF8087) else Color(0xFF2C2F3C),
                                         RoundedCornerShape(8.dp)
                                     )
                                     .clickable { searchType = typeKey }
@@ -2284,7 +2284,7 @@ private fun ManualMatchCandidateDialog(
                         contentAlignment = Alignment.Center
                     ) {
                         CircularProgressIndicator(
-                            color = Color(0xFFA855F7),
+                            color = Color(0xFFFB515B),
                             modifier = Modifier.size(24.dp),
                             strokeWidth = 2.dp
                         )
@@ -2316,8 +2316,8 @@ private fun ManualMatchCandidateDialog(
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .clip(RoundedCornerShape(12.dp))
-                                    .background(Color(0xFF181A22))
-                                    .border(1.dp, Color(0xFF282A36), RoundedCornerShape(12.dp))
+                                    .background(Color(0xFF201A1A))
+                                    .border(1.dp, Color(0xFF342A2A), RoundedCornerShape(12.dp))
                                     .clickable(enabled = !isAnyMatching) {
                                         matchingCandidateKey = candKey
                                         if (unmatchedItems.size == 1) {
@@ -2371,7 +2371,7 @@ private fun ManualMatchCandidateDialog(
                                             if (!cand.year.isNullOrBlank()) {
                                                 Text(
                                                     text = cand.year,
-                                                    color = Color(0xFFA855F7),
+                                                    color = Color(0xFFFB515B),
                                                     fontFamily = NdotFont,
                                                     fontSize = 10.sp
                                                 )
@@ -2409,20 +2409,20 @@ private fun ManualMatchCandidateDialog(
                                     Box(
                                         modifier = Modifier
                                             .clip(RoundedCornerShape(6.dp))
-                                            .background(Color(0xFF2E1547))
-                                            .border(1.dp, Color(0xFFA855F7), RoundedCornerShape(6.dp))
+                                            .background(Color(0xFF481417))
+                                            .border(1.dp, Color(0xFFFB515B), RoundedCornerShape(6.dp))
                                             .padding(horizontal = 8.dp, vertical = 4.dp)
                                     ) {
                                         if (isThisMatching) {
                                             CircularProgressIndicator(
-                                                color = Color(0xFFD8B4FE),
+                                                color = Color(0xFFFF8087),
                                                 modifier = Modifier.size(12.dp),
                                                 strokeWidth = 1.5.dp
                                             )
                                         } else {
                                             Text(
                                                 text = if (unmatchedItems.size > 1) "APPLY ALL" else "MATCH",
-                                                color = if (isAnyMatching) Color(0xFF6B7280) else Color(0xFFD8B4FE),
+                                                color = if (isAnyMatching) Color(0xFF6B7280) else Color(0xFFFF8087),
                                                 fontFamily = NdotFont,
                                                 fontSize = 9.5.sp,
                                                 fontWeight = FontWeight.Bold

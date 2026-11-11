@@ -212,8 +212,8 @@ fun LogsScreen(
                     modifier = Modifier
                         .size(38.dp)
                         .clip(CircleShape)
-                        .background(Color(0xFF14151B))
-                        .border(1.dp, Color(0xFF262833), CircleShape)
+                        .background(Color(0xFF1A1515))
+                        .border(1.dp, Color(0xFF312828), CircleShape)
                         .clickable { onBack() }
                 ) {
                     Icon(
@@ -262,8 +262,8 @@ fun LogsScreen(
                     modifier = Modifier
                         .size(34.dp)
                         .clip(CircleShape)
-                        .background(Color(0xFF14151B))
-                        .border(1.dp, Color(0xFF262833), CircleShape)
+                        .background(Color(0xFF1A1515))
+                        .border(1.dp, Color(0xFF312828), CircleShape)
                         .clickable { viewModel.refreshAppLogs() }
                 ) {
                     Icon(
@@ -410,8 +410,8 @@ fun LogsScreen(
                 modifier = Modifier
                     .weight(1f)
                     .clip(RoundedCornerShape(10.dp))
-                    .background(Color(0xFF101218))
-                    .border(1.dp, Color(0xFF1F222D), RoundedCornerShape(10.dp))
+                    .background(Color(0xFF161212))
+                    .border(1.dp, Color(0xFF2A2222), RoundedCornerShape(10.dp))
                     .padding(horizontal = 10.dp, vertical = 7.dp)
             ) {
                 Column {
@@ -448,8 +448,8 @@ fun LogsScreen(
                 modifier = Modifier
                     .weight(1f)
                     .clip(RoundedCornerShape(10.dp))
-                    .background(Color(0xFF101218))
-                    .border(1.dp, Color(0xFF1F222D), RoundedCornerShape(10.dp))
+                    .background(Color(0xFF161212))
+                    .border(1.dp, Color(0xFF2A2222), RoundedCornerShape(10.dp))
                     .padding(horizontal = 10.dp, vertical = 7.dp)
             ) {
                 Column {
@@ -476,10 +476,10 @@ fun LogsScreen(
                 modifier = Modifier
                     .weight(1f)
                     .clip(RoundedCornerShape(10.dp))
-                    .background(if (dropsCount > 0) Color(0x22FF5252) else Color(0xFF101218))
+                    .background(if (dropsCount > 0) Color(0x22FF5252) else Color(0xFF161212))
                     .border(
                         1.dp,
-                        if (dropsCount > 0) StatusRed.copy(alpha = 0.5f) else Color(0xFF1F222D),
+                        if (dropsCount > 0) StatusRed.copy(alpha = 0.5f) else Color(0xFF2A2222),
                         RoundedCornerShape(10.dp)
                     )
                     .padding(horizontal = 10.dp, vertical = 7.dp)
@@ -509,8 +509,8 @@ fun LogsScreen(
             modifier = Modifier
                 .fillMaxWidth()
                 .clip(RoundedCornerShape(10.dp))
-                .background(Color(0xFF12141A))
-                .border(1.dp, Color(0xFF22242D), RoundedCornerShape(10.dp))
+                .background(Color(0xFF181414))
+                .border(1.dp, Color(0xFF2B2424), RoundedCornerShape(10.dp))
                 .padding(horizontal = 10.dp, vertical = 7.dp)
         ) {
             Row(
@@ -555,7 +555,7 @@ fun LogsScreen(
                         modifier = Modifier
                             .size(18.dp)
                             .clip(CircleShape)
-                            .background(Color(0xFF22242D))
+                            .background(Color(0xFF2B2424))
                             .clickable { searchQuery = "" }
                     ) {
                         Icon(
@@ -592,10 +592,10 @@ fun LogsScreen(
                         .weight(1f)
                         .height(29.dp)
                         .clip(RoundedCornerShape(8.dp))
-                        .background(if (isSelected) Color(0xFF242734) else Color(0xFF101217))
+                        .background(if (isSelected) Color(0xFF302828) else Color(0xFF151212))
                         .border(
                             1.dp,
-                            if (isSelected) AccentApple.copy(alpha = 0.5f) else Color(0xFF1B1E26),
+                            if (isSelected) AccentApple.copy(alpha = 0.5f) else Color(0xFF241D1D),
                             RoundedCornerShape(8.dp)
                         )
                         .clickable { selectedFilterTab = code }
@@ -630,8 +630,8 @@ fun LogsScreen(
                 .fillMaxWidth()
                 .weight(1f)
                 .clip(RoundedCornerShape(12.dp))
-                .background(Color(0xFF090A0E))
-                .border(1.dp, Color(0xFF1A1C24), RoundedCornerShape(12.dp))
+                .background(Color(0xFF0D0A0A))
+                .border(1.dp, Color(0xFF221C1C), RoundedCornerShape(12.dp))
         ) {
             if (filteredLogs.isEmpty()) {
                 Column(
@@ -692,7 +692,7 @@ fun LogsScreen(
                         modifier = Modifier
                             .height(28.dp)
                             .clip(RoundedCornerShape(14.dp))
-                            .background(if (autoScrollEnabled) Color(0xEE1E2230) else Color(0xEE14161E))
+                            .background(if (autoScrollEnabled) Color(0xEE2B2323) else Color(0xEE1C1616))
                             .border(
                                 1.dp,
                                 if (autoScrollEnabled) StatusGreen.copy(alpha = 0.4f) else BorderSilver,
@@ -726,7 +726,7 @@ fun LogsScreen(
                         modifier = Modifier
                             .size(28.dp)
                             .clip(CircleShape)
-                            .background(Color(0xEE1E202A))
+                            .background(Color(0xEE282020))
                             .border(1.dp, BorderSilver, CircleShape)
                             .clickable {
                                 coroutineScope.launch {
@@ -870,14 +870,14 @@ private fun LogLineCard(
         item.level == "E" || item.level == "F" -> Color(0x18FF3366)
         item.level == "W" -> Color(0x12FFB300)
         item.isSpeedMetric -> Color(0x0C69F0AE)
-        else -> Color(0xFF0D0F14)
+        else -> Color(0xFF120F0F)
     }
 
     val borderColor = when {
         item.isDropOrTimeout -> Color(0x55FF5252)
         item.level == "E" || item.level == "F" -> Color(0x45FF3366)
         item.level == "W" -> Color(0x35FFB300)
-        else -> Color(0xFF171922)
+        else -> Color(0xFF1F1A1A)
     }
 
     Box(

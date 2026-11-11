@@ -110,7 +110,7 @@ fun ApiCredentialsScreen(viewModel: MainAppViewModel) {
                     )
 
                     Text(
-                        text = "NoxMedia",
+                        text = "MysticFlix",
                         color = Color.White,
                         fontSize = 20.sp,
                         fontFamily = NdotFont,

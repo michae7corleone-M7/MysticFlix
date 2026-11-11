@@ -198,7 +198,7 @@ fun HomeScreen(viewModel: MainAppViewModel) {
                 )
 
                 Text(
-                    text = "NoxMedia",
+                    text = "MysticFlix",
                     color = Color.White,
                     fontSize = 20.sp,
                     fontFamily = NdotFont,
@@ -208,7 +208,7 @@ fun HomeScreen(viewModel: MainAppViewModel) {
 
             // Sleek Minimalist Divider Line
             HorizontalDivider(
-                color = Color(0xFF24262E),
+                color = Color(0xFF2D2525),
                 thickness = 1.dp,
                 modifier = Modifier.fillMaxWidth()
             )
@@ -277,7 +277,7 @@ fun HomeScreen(viewModel: MainAppViewModel) {
                 .padding(horizontal = 20.dp)
                 .clip(RoundedCornerShape(20.dp))
                 .border(
-                    BorderStroke(1.dp, Color(0xFF282A31)),
+                    BorderStroke(1.dp, Color(0xFF312828)),
                     shape = RoundedCornerShape(20.dp)
                 )
                 .combinedClickable(
@@ -298,7 +298,7 @@ fun HomeScreen(viewModel: MainAppViewModel) {
                     }
                 ),
             shape = RoundedCornerShape(20.dp),
-            colors = CardDefaults.cardColors(containerColor = Color(0xFF1E1F24))
+            colors = CardDefaults.cardColors(containerColor = Color(0xFF241E1E))
         ) {
             AnimatedContent(
                 targetState = telemetry.isRunning,
@@ -395,8 +395,8 @@ fun HomeScreen(viewModel: MainAppViewModel) {
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .padding(horizontal = 18.dp)
-                                    .background(Color(0xFF131418), shape = RoundedCornerShape(10.dp))
-                                    .border(BorderStroke(0.8.dp, Color(0xFF26272E)), shape = RoundedCornerShape(10.dp))
+                                    .background(Color(0xFF181313), shape = RoundedCornerShape(10.dp))
+                                    .border(BorderStroke(0.8.dp, Color(0xFF2E2626)), shape = RoundedCornerShape(10.dp))
                                     .padding(horizontal = 16.dp, vertical = 9.dp),
                                 horizontalArrangement = Arrangement.SpaceBetween,
                                 verticalAlignment = Alignment.CenterVertically
@@ -451,10 +451,10 @@ fun HomeScreen(viewModel: MainAppViewModel) {
                         Box(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .background(Color(0xFF131418))
+                                .background(Color(0xFF181313))
                                 .border(
                                     width = 1.dp,
-                                    color = Color(0xFF26272E),
+                                    color = Color(0xFF2E2626),
                                     shape = RoundedCornerShape(bottomStart = 20.dp, bottomEnd = 20.dp)
                                 )
                                 .clickable {
@@ -503,10 +503,10 @@ fun HomeScreen(viewModel: MainAppViewModel) {
                 .background(
                     Brush.linearGradient(
                         colors = listOf(
-                            Color(0xFF8B5CF6), // Luminous lilac violet at top-left
-                            Color(0xFF6D28D9), // Vibrant purple
-                            Color(0xFF4C1D95), // Deep royal violet
-                            Color(0xFF2E1065)  // Cosmic dark plum at bottom-right
+                            Color(0xFFFA5862), // Luminous lilac violet at top-left
+                            Color(0xFFDD242F), // Vibrant purple
+                            Color(0xFF981A22), // Deep royal violet
+                            Color(0xFF670E13)  // Cosmic dark plum at bottom-right
                         ),
                         start = Offset(0f, 0f),
                         end = Offset.Infinite
@@ -517,9 +517,9 @@ fun HomeScreen(viewModel: MainAppViewModel) {
                         1.dp,
                         Brush.verticalGradient(
                             colors = listOf(
-                                Color(0x66E9D5FF), // Glass edge highlight
-                                Color(0x33A855F7), // Mid violet
-                                Color(0x153B0764)  // Subtle base shadow
+                                Color(0x66FF8087), // Glass edge highlight
+                                Color(0x33FB515B), // Mid violet
+                                Color(0x1566050B)  // Subtle base shadow
                             )
                         )
                     ),
@@ -543,7 +543,7 @@ fun HomeScreen(viewModel: MainAppViewModel) {
                 ) {
                     Text(
                         text = "Library",
-                        color = Color(0xFFF3E8FF),
+                        color = Color(0xFFFF8087),
                         fontSize = 14.sp,
                         fontWeight = FontWeight.Medium,
                         letterSpacing = 0.3.sp
@@ -551,7 +551,7 @@ fun HomeScreen(viewModel: MainAppViewModel) {
 
                     Text(
                         text = "›",
-                        color = Color(0xCCE9D5FF),
+                        color = Color(0xCCFF8087),
                         fontSize = 20.sp,
                         fontWeight = FontWeight.Light
                     )
@@ -576,7 +576,7 @@ fun HomeScreen(viewModel: MainAppViewModel) {
                         )
                         Text(
                             text = "files",
-                            color = Color(0xFFE9D5FF),
+                            color = Color(0xFFFF8087),
                             fontSize = 13.5.sp,
                             fontWeight = FontWeight.Normal,
                             modifier = Modifier.padding(bottom = 4.dp)
@@ -599,7 +599,7 @@ fun HomeScreen(viewModel: MainAppViewModel) {
                 ) {
                     Text(
                         text = "$moviesCount Movies  •  $showsCount Shows  •  $episodesCount Ep",
-                        color = Color(0xFFDDD6FE),
+                        color = Color(0xFFFF8087),
                         fontSize = 11.5.sp,
                         fontWeight = FontWeight.Normal,
                         maxLines = 1,
@@ -643,7 +643,7 @@ fun HomeScreen(viewModel: MainAppViewModel) {
 
                     Text(
                         text = "view all →",
-                        color = Color(0xFFA855F7),
+                        color = Color(0xFFFB515B),
                         fontFamily = NdotFont,
                         fontSize = 11.sp,
                         modifier = Modifier
@@ -714,7 +714,7 @@ fun HomeScreen(viewModel: MainAppViewModel) {
                                 Icon(
                                     imageVector = Icons.Default.AutoAwesome,
                                     contentDescription = "AI Powered",
-                                    tint = Color(0xFFA855F7),
+                                    tint = Color(0xFFFB515B),
                                     modifier = Modifier.size(13.dp)
                                 )
                             }
@@ -722,7 +722,7 @@ fun HomeScreen(viewModel: MainAppViewModel) {
 
                         Text(
                             text = "view all →",
-                            color = Color(0xFFA855F7),
+                            color = Color(0xFFFB515B),
                             fontFamily = NdotFont,
                             fontSize = 11.sp,
                             modifier = Modifier
@@ -793,7 +793,7 @@ private fun RecentMediaCard(
                 .width(114.dp)
                 .height(171.dp)
                 .clip(RoundedCornerShape(14.dp))
-                .border(BorderStroke(1.dp, Color(0xFF282A31)), RoundedCornerShape(14.dp))
+                .border(BorderStroke(1.dp, Color(0xFF312828)), RoundedCornerShape(14.dp))
         ) {
             RemoteImage(
                 url = group.posterUrl,
@@ -809,7 +809,7 @@ private fun RecentMediaCard(
                         .align(Alignment.BottomStart)
                         .padding(5.dp)
                         .clip(RoundedCornerShape(5.dp))
-                        .background(Color(0xFF6B21A8).copy(alpha = 0.85f))
+                        .background(Color(0xFFAB1E26).copy(alpha = 0.85f))
                         .padding(horizontal = 5.dp, vertical = 2.dp)
                 ) {
                     Text(
@@ -837,7 +837,7 @@ private fun RecentMediaCard(
         val yearText = group.year?.takeIf { it.isNotBlank() } ?: "2026"
         Text(
             text = "$yearText · ${group.formattedTotalSize}",
-            color = Color(0xFFA855F7),
+            color = Color(0xFFFB515B),
             fontFamily = FontFamily.Default,
             fontWeight = FontWeight.Medium,
             fontSize = 10.5.sp,
@@ -972,8 +972,8 @@ private fun SiriWaveform(
         // 3 harmonic waves with smooth gaussian/sine envelope for seamless end tapering
         val waveConfigs = listOf(
             Triple(1.0f, 0.0f, Color(0xEEFFFFFF) to 1.6f),
-            Triple(1.3f, 1.2f, Color(0xB3E9D5FF) to 1.2f),
-            Triple(0.8f, 2.5f, Color(0x80C084FC) to 1.0f)
+            Triple(1.3f, 1.2f, Color(0xB3FF8087) to 1.2f),
+            Triple(0.8f, 2.5f, Color(0x80FF8087) to 1.0f)
         )
 
         for ((freqMult, phaseOffset, style) in waveConfigs) {
@@ -1019,7 +1019,7 @@ private fun ConcentricRingEmblem(modifier: Modifier = Modifier) {
             .border(1.5.dp, Color(0x99FFFFFF), CircleShape)
             .padding(3.dp)
             .clip(CircleShape)
-            .background(Color(0xFF0D0E12)),
+            .background(Color(0xFF110E0E)),
         contentAlignment = Alignment.Center
     ) {
         Canvas(

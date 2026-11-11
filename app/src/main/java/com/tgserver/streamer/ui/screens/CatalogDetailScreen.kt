@@ -109,7 +109,7 @@ fun CatalogDetailScreen(
                         modifier = Modifier
                             .size(36.dp)
                             .clip(CircleShape)
-                            .background(Color(0xFF1E1F24))
+                            .background(Color(0xFF241E1E))
                     ) {
                         Icon(
                             imageVector = Icons.AutoMirrored.Filled.ArrowBack,
@@ -136,7 +136,7 @@ fun CatalogDetailScreen(
                                 Icon(
                                     imageVector = Icons.Default.AutoAwesome,
                                     contentDescription = "AI Powered",
-                                    tint = Color(0xFFA855F7),
+                                    tint = Color(0xFFFB515B),
                                     modifier = Modifier.size(14.dp)
                                 )
                             }
@@ -159,7 +159,7 @@ fun CatalogDetailScreen(
                         modifier = Modifier
                             .size(36.dp)
                             .clip(CircleShape)
-                            .background(Color(0xFF1E1F24))
+                            .background(Color(0xFF241E1E))
                     ) {
                         Icon(
                             imageVector = Icons.Default.Edit,
@@ -187,7 +187,7 @@ fun CatalogDetailScreen(
 
             Text(
                 text = criteriaLabels.joinToString(" • "),
-                color = Color(0xFFA855F7),
+                color = Color(0xFFFB515B),
                 fontSize = 11.5.sp,
                 fontWeight = FontWeight.Medium,
                 maxLines = 1,
@@ -204,10 +204,10 @@ fun CatalogDetailScreen(
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(12.dp),
                     colors = OutlinedTextFieldDefaults.colors(
-                        focusedContainerColor = Color(0xFF16171B),
-                        unfocusedContainerColor = Color(0xFF16171B),
-                        focusedBorderColor = Color(0xFFA855F7),
-                        unfocusedBorderColor = Color(0xFF282A31),
+                        focusedContainerColor = Color(0xFF1B1616),
+                        unfocusedContainerColor = Color(0xFF1B1616),
+                        focusedBorderColor = Color(0xFFFB515B),
+                        unfocusedBorderColor = Color(0xFF312828),
                         focusedTextColor = Color.White,
                         unfocusedTextColor = Color.White
                     ),
@@ -288,7 +288,7 @@ private fun CatalogMediaCard(
                 .fillMaxWidth()
                 .aspectRatio(2f / 3f)
                 .clip(RoundedCornerShape(12.dp))
-                .border(BorderStroke(1.dp, Color(0xFF282A31)), RoundedCornerShape(12.dp))
+                .border(BorderStroke(1.dp, Color(0xFF312828)), RoundedCornerShape(12.dp))
         ) {
             RemoteImage(
                 url = group.posterUrl,
