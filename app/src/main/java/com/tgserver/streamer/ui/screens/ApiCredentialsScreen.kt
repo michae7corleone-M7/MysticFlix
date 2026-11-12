@@ -45,7 +45,12 @@ import com.tgserver.streamer.theme.*
 import com.tgserver.streamer.ui.MainAppViewModel
 import com.tgserver.streamer.ui.components.*
 
-private val NdotFont = FontFamily(Font(R.font.ndot))
+private val NdotFont = FontFamily(
+    Font(R.font.inter_regular, androidx.compose.ui.text.font.FontWeight.Normal),
+    Font(R.font.inter_medium, androidx.compose.ui.text.font.FontWeight.Medium),
+    Font(R.font.inter_semibold, androidx.compose.ui.text.font.FontWeight.SemiBold),
+    Font(R.font.inter_bold, androidx.compose.ui.text.font.FontWeight.Bold)
+)
 
 @Composable
 fun ApiCredentialsScreen(viewModel: MainAppViewModel) {

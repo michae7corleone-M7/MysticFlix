@@ -34,7 +34,12 @@ import com.tgserver.streamer.data.model.MediaGroup
 import com.tgserver.streamer.theme.BackgroundOled
 import com.tgserver.streamer.ui.MainAppViewModel
 
-private val NdotFont = FontFamily(Font(R.font.ndot))
+private val NdotFont = FontFamily(
+    Font(R.font.inter_regular, androidx.compose.ui.text.font.FontWeight.Normal),
+    Font(R.font.inter_medium, androidx.compose.ui.text.font.FontWeight.Medium),
+    Font(R.font.inter_semibold, androidx.compose.ui.text.font.FontWeight.SemiBold),
+    Font(R.font.inter_bold, androidx.compose.ui.text.font.FontWeight.Bold)
+)
 
 @Composable
 fun CatalogDetailScreen(

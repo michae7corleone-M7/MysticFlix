@@ -42,7 +42,12 @@ import com.tgserver.streamer.ui.MainAppViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-private val NdotFont = FontFamily(Font(R.font.ndot))
+private val NdotFont = FontFamily(
+    Font(R.font.inter_regular, androidx.compose.ui.text.font.FontWeight.Normal),
+    Font(R.font.inter_medium, androidx.compose.ui.text.font.FontWeight.Medium),
+    Font(R.font.inter_semibold, androidx.compose.ui.text.font.FontWeight.SemiBold),
+    Font(R.font.inter_bold, androidx.compose.ui.text.font.FontWeight.Bold)
+)
 
 private val STANDARD_GENRES = listOf(
     "Action", "Adventure", "Animation", "Anime", "Comedy", "Crime",

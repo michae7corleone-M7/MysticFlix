@@ -24,6 +24,12 @@ import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.CollectionsBookmark
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Layers
+import androidx.compose.material.icons.filled.Sensors
+import androidx.compose.material.icons.filled.SmartDisplay
+import androidx.compose.material.icons.outlined.Layers
+import androidx.compose.material.icons.outlined.Sensors
+import androidx.compose.material.icons.outlined.SmartDisplay
 import androidx.compose.material.icons.filled.Hub
 import androidx.compose.material.icons.filled.Settings
 import androidx.compose.material.icons.filled.VideoLibrary
@@ -79,20 +85,26 @@ import java.io.File
 import kotlin.math.abs
 import kotlin.math.roundToInt
 
-private val NdotFont = FontFamily(Font(R.font.ndot))
+private val NdotFont = FontFamily(
+    Font(R.font.inter_regular, androidx.compose.ui.text.font.FontWeight.Normal),
+    Font(R.font.inter_medium, androidx.compose.ui.text.font.FontWeight.Medium),
+    Font(R.font.inter_semibold, androidx.compose.ui.text.font.FontWeight.SemiBold),
+    Font(R.font.inter_bold, androidx.compose.ui.text.font.FontWeight.Bold)
+)
 
 private data class NavItemData(
     val tab: AppTab,
     val selectedIcon: ImageVector,
-    val unselectedIcon: ImageVector
+    val unselectedIcon: ImageVector,
+    val label: String
 )
 
 private val NAV_TABS = listOf(
-    NavItemData(AppTab.HOME, Icons.Filled.Home, Icons.Outlined.Home),
-    NavItemData(AppTab.LIBRARY, Icons.Filled.VideoLibrary, Icons.Outlined.VideoLibrary),
-    NavItemData(AppTab.CHANNELS, Icons.Filled.Hub, Icons.Outlined.Hub),
-    NavItemData(AppTab.CATALOGS, Icons.Filled.CollectionsBookmark, Icons.Outlined.CollectionsBookmark),
-    NavItemData(AppTab.SETTINGS, Icons.Filled.Settings, Icons.Outlined.Settings)
+    NavItemData(AppTab.HOME, Icons.Filled.Home, Icons.Outlined.Home, "Home"),
+    NavItemData(AppTab.LIBRARY, Icons.Filled.SmartDisplay, Icons.Outlined.SmartDisplay, "Library"),
+    NavItemData(AppTab.CHANNELS, Icons.Filled.Sensors, Icons.Outlined.Sensors, "Channels"),
+    NavItemData(AppTab.CATALOGS, Icons.Filled.Layers, Icons.Outlined.Layers, "Catalogs"),
+    NavItemData(AppTab.SETTINGS, Icons.Filled.Settings, Icons.Outlined.Settings, "Settings")
 )
 
 @Composable
@@ -196,7 +208,6 @@ fun AppRootScreen(viewModel: MainAppViewModel) {
                 modifier = Modifier
                     .align(Alignment.BottomCenter)
                     .navigationBarsPadding()
-                    .padding(bottom = 16.dp)
             )
 
             // Enterprise Floating True Cloud Sync Notification Pill (Non-blocking, top-aligned)
@@ -302,13 +313,7 @@ private fun FloatingCloudSyncPill(
 }
 
 /**
- * Ultra-minimalist, 60fps+ fluid glassmorphic floating navigation island.
- * Features:
- * - Only icons (pure minimal aesthetic, zero text clutter).
- * - Symmetrical, perfectly centered icon alignment.
- * - Fluid hold-to-swipe drag scrub gesture with squishy liquid springs.
- * - Profile avatar integrated for Settings tab with active white ring.
- * - True multi-layered frosted smoked glass with specular reflection & zero background cut-off.
+ * MysticFlix bottom bar: five labelled tabs, thin red top line, red glow on the active tab.
  */
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -320,309 +325,55 @@ private fun MinimalFloatingNavDock(
     modifier: Modifier = Modifier
 ) {
     val haptic = LocalHapticFeedback.current
-    val density = LocalDensity.current
-
-    var barWidthPx by remember { mutableFloatStateOf(1f) }
-    val horizontalPaddingPx = remember(density) { with(density) { 5.dp.toPx() } }
-
-    val targetIndex = remember(currentTab) {
-        NAV_TABS.indexOfFirst { it.tab == currentTab }.coerceAtLeast(0).toFloat()
-    }
-
-    var isDragging by remember { mutableStateOf(false) }
-    var dragPosition by remember { mutableFloatStateOf(targetIndex) }
-    var lastHapticIndex by remember { mutableIntStateOf(targetIndex.toInt()) }
-
-    LaunchedEffect(targetIndex) {
-        if (!isDragging) {
-            dragPosition = targetIndex
-            lastHapticIndex = targetIndex.toInt()
-        }
-    }
-
-    // 120 FPS buttery smooth spring interpolation
-    val animatedPosition by animateFloatAsState(
-        targetValue = if (isDragging) dragPosition else targetIndex,
-        animationSpec = if (isDragging) spring(dampingRatio = 0.98f, stiffness = 1600f)
-                        else spring(dampingRatio = 0.72f, stiffness = 420f),
-        label = "dock_pill_pos"
-    )
-
-    // Liquid squishy stretch physics based on animation speed
-    var prevPos by remember { mutableFloatStateOf(targetIndex) }
-    val velocity = animatedPosition - prevPos
-    SideEffect {
-        prevPos = animatedPosition
-    }
-
-    val dynamicStretch by animateFloatAsState(
-        targetValue = (abs(velocity) * 1.8f).coerceIn(0f, 0.28f),
-        animationSpec = spring(dampingRatio = 0.65f, stiffness = 600f),
-        label = "dock_pill_stretch"
-    )
-
-    val pillScaleX = 1.0f + dynamicStretch
-    val pillScaleY = (1.0f - dynamicStretch * 0.35f).coerceAtLeast(0.75f)
-
-    Box(
-        modifier = modifier,
-        contentAlignment = Alignment.Center
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+            .background(Color(0xF2060203))
     ) {
-        // Floating Island Capsule (Compact, Centered, Symmetrical, Frosted Glass)
         Box(
             modifier = Modifier
-                .width(336.dp)
-                .height(54.dp)
-                .shadow(
-                    elevation = 24.dp,
-                    shape = RoundedCornerShape(27.dp),
-                    spotColor = Color(0xB3000000),
-                    ambientColor = Color(0x66000000)
-                )
-                .clip(RoundedCornerShape(27.dp))
-                // Layer 1: Dense Smoked Obsidian Frosted Base (stops text bleed-through)
-                .background(
-                    Brush.verticalGradient(
-                        colors = listOf(
-                            Color(0xF71E1919),
-                            Color(0xFD120F0F)
-                        )
-                    )
-                )
-                // Layer 2: Frosted Specular Sheen (mimics frosted glass catching ambient light)
-                .background(
-                    Brush.verticalGradient(
-                        colors = listOf(
-                            Color(0x28FFFFFF),
-                            Color(0x0CFFFFFF),
-                            Color(0x00FFFFFF)
-                        )
-                    )
-                )
-                // Layer 3: Glass Bevel Outer Border (metallic light-catching top edge)
-                .border(
-                    BorderStroke(
-                        1.2.dp,
-                        Brush.verticalGradient(
-                            colors = listOf(
-                                Color(0x55FFFFFF),
-                                Color(0x20FFFFFF),
-                                Color(0x08FFFFFF)
-                            )
-                        )
-                    ),
-                    shape = RoundedCornerShape(27.dp)
-                )
-                .onSizeChanged { barWidthPx = it.width.toFloat() }
-                // Hold-to-Swipe Gesture Scrubbing across the dock
-                .pointerInput(Unit) {
-                    detectHorizontalDragGestures(
-                        onDragStart = { offset ->
-                            isDragging = true
-                            val usableWidth = (barWidthPx - 2 * horizontalPaddingPx).coerceAtLeast(1f)
-                            val relativeX = (offset.x - horizontalPaddingPx).coerceIn(0f, usableWidth)
-                            val frac = ((relativeX / usableWidth) * NAV_TABS.size - 0.5f)
-                                .coerceIn(0f, (NAV_TABS.size - 1).toFloat())
-                            dragPosition = frac
-                        },
-                        onHorizontalDrag = { change, _ ->
-                            change.consume()
-                            val usableWidth = (barWidthPx - 2 * horizontalPaddingPx).coerceAtLeast(1f)
-                            val relativeX = (change.position.x - horizontalPaddingPx).coerceIn(0f, usableWidth)
-                            val frac = ((relativeX / usableWidth) * NAV_TABS.size - 0.5f)
-                                .coerceIn(0f, (NAV_TABS.size - 1).toFloat())
-                            dragPosition = frac
-
-                            // Haptic tick on crossing tab boundary
-                            val closest = frac.roundToInt().coerceIn(0, NAV_TABS.size - 1)
-                            if (closest != lastHapticIndex) {
-                                lastHapticIndex = closest
-                                haptic.performHapticFeedback(HapticFeedbackType.TextHandleMove)
-                            }
-                        },
-                        onDragEnd = {
-                            isDragging = false
-                            val closest = dragPosition.roundToInt().coerceIn(0, NAV_TABS.size - 1)
-                            haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-                            onTabSelected(NAV_TABS[closest].tab)
-                        },
-                        onDragCancel = {
-                            isDragging = false
-                        }
-                    )
-                }
+                .fillMaxWidth()
+                .height(1.dp)
+                .background(Color(0xFF3C1016))
+        )
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(68.dp),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            // Subtle frosted glass top specular reflection line
-            Box(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(1.dp)
-                    .padding(horizontal = 24.dp)
-                    .align(Alignment.TopCenter)
-                    .background(
-                        Brush.horizontalGradient(
-                            colors = listOf(
-                                Color.Transparent,
-                                Color(0x30FFFFFF),
-                                Color(0x60FFFFFF),
-                                Color(0x30FFFFFF),
-                                Color.Transparent
-                            )
-                        )
-                    )
-            )
-
-            val usableWidthPx = (barWidthPx - 2 * horizontalPaddingPx).coerceAtLeast(1f)
-            val slotWidthPx = usableWidthPx / NAV_TABS.size
-            val slotWidthDp = with(density) { slotWidthPx.toDp() }
-
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .padding(horizontal = 5.dp, vertical = 4.dp)
-            ) {
-                // Sliding Elevated Frosted Glass Highlight Pill
-                Box(
-                    modifier = Modifier
-                        .width(slotWidthDp)
-                        .fillMaxHeight()
-                        .offset {
-                            IntOffset(
-                                x = (animatedPosition * slotWidthPx).roundToInt(),
-                                y = 0
-                            )
-                        }
-                        .graphicsLayer {
-                            scaleX = pillScaleX
-                            scaleY = pillScaleY
-                            transformOrigin = TransformOrigin(0.5f, 0.5f)
-                        }
-                        .clip(RoundedCornerShape(23.dp))
-                        .background(
-                            Brush.verticalGradient(
-                                colors = listOf(
-                                    Color(0x38FFFFFF), // Elevated frosted highlight
-                                    Color(0x16FFFFFF)
-                                )
-                            )
-                        )
-                        .border(
-                            BorderStroke(
-                                1.dp,
-                                Brush.verticalGradient(
-                                    colors = listOf(
-                                        Color(0x60FFFFFF),
-                                        Color(0x24FFFFFF)
-                                    )
-                                )
-                            ),
-                            shape = RoundedCornerShape(23.dp)
-                        )
+            NAV_TABS.forEach { item ->
+                NavBarItem(
+                    item = item,
+                    selected = currentTab == item.tab,
+                    onClick = {
+                        haptic.performHapticFeedback(HapticFeedbackType.LongPress)
+                        onTabSelected(item.tab)
+                    },
+                    modifier = Modifier.weight(1f)
                 )
-
-                // Row of symmetrical, icon-only navigation slots
-                Row(
-                    modifier = Modifier.fillMaxSize(),
-                    horizontalArrangement = Arrangement.SpaceEvenly,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    NAV_TABS.forEachIndexed { index, item ->
-                        val distance = abs(animatedPosition - index)
-                        val closeness = (1f - distance).coerceIn(0f, 1f)
-                        val isSelected = currentTab == item.tab
-
-                        MinimalNavItem(
-                            item = item,
-                            isSelected = isSelected,
-                            closeness = closeness,
-                            avatarUrl = if (item.tab == AppTab.SETTINGS) avatarUrl else null,
-                            userInitials = if (item.tab == AppTab.SETTINGS) userInitials else "",
-                            onClick = {
-                                haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-                                onTabSelected(item.tab)
-                            },
-                            modifier = Modifier.weight(1f)
-                        )
-                    }
-                }
             }
         }
     }
 }
 
-/**
- * Individual navigation item (pure icon, perfectly centered, no text).
- */
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun MinimalNavItem(
+private fun NavBarItem(
     item: NavItemData,
-    isSelected: Boolean,
-    closeness: Float,
-    avatarUrl: String?,
-    userInitials: String,
+    selected: Boolean,
     onClick: () -> Unit,
     modifier: Modifier = Modifier
 ) {
-    val isSettings = item.tab == AppTab.SETTINGS
-
-    // Micro bounce scale on selection
-    val bounceScale by animateFloatAsState(
-        targetValue = 1.0f + (closeness * 0.08f),
-        animationSpec = spring(
-            dampingRatio = Spring.DampingRatioMediumBouncy,
-            stiffness = Spring.StiffnessMedium
-        ),
-        label = "nav_item_bounce"
+    val activeRed = Color(0xFFFF4552)
+    val tint by animateColorAsState(
+        targetValue = if (selected) activeRed else Color(0xFFA1A1AA),
+        animationSpec = tween(160),
+        label = "nav_tint"
     )
-
-    // Load local or cached avatar bitmap synchronously, fallback to remote fetch
-    var avatarBitmap by remember(avatarUrl) {
-        val path = avatarUrl?.removePrefix("file://")
-        val initialBmp = if (!path.isNullOrBlank()) {
-            val f = File(path)
-            if (f.exists() && f.length() > 0) {
-                try {
-                    BitmapFactory.decodeFile(f.absolutePath)?.asImageBitmap()
-                } catch (_: Exception) {
-                    null
-                }
-            } else null
-        } else null
-        mutableStateOf(initialBmp)
-    }
-
-    LaunchedEffect(avatarUrl) {
-        if (avatarBitmap == null && !avatarUrl.isNullOrBlank() && (avatarUrl.startsWith("http://") || avatarUrl.startsWith("https://"))) {
-            withContext(Dispatchers.IO) {
-                try {
-                    val req = okhttp3.Request.Builder()
-                        .url(avatarUrl)
-                        .header("User-Agent", "NoxMedia/1.0 (Android)")
-                        .build()
-                    val client = okhttp3.OkHttpClient()
-                    client.newCall(req).execute().use { resp ->
-                        if (resp.isSuccessful) {
-                            resp.body?.byteStream()?.use { stream ->
-                                val bmp = BitmapFactory.decodeStream(stream)
-                                if (bmp != null) {
-                                    withContext(Dispatchers.Main) {
-                                        avatarBitmap = bmp.asImageBitmap()
-                                    }
-                                }
-                            }
-                        }
-                    }
-                } catch (_: Exception) {
-                }
-            }
-        }
-    }
-
     Box(
         modifier = modifier
             .fillMaxHeight()
-            .clip(RoundedCornerShape(23.dp))
             .combinedClickable(
                 interactionSource = remember { MutableInteractionSource() },
                 indication = null,
@@ -631,65 +382,41 @@ private fun MinimalNavItem(
             ),
         contentAlignment = Alignment.Center
     ) {
-        Box(
-            modifier = Modifier.scale(bounceScale),
-            contentAlignment = Alignment.Center
+        if (selected) {
+            Box(
+                modifier = Modifier
+                    .align(Alignment.TopCenter)
+                    .width(30.dp)
+                    .height(3.dp)
+                    .clip(RoundedCornerShape(2.dp))
+                    .background(activeRed)
+            )
+            Box(
+                modifier = Modifier
+                    .size(54.dp)
+                    .background(
+                        Brush.radialGradient(listOf(Color(0x55E11D2E), Color.Transparent)),
+                        CircleShape
+                    )
+            )
+        }
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(3.dp)
         ) {
-            if (isSettings) {
-                // Profile Avatar Tab (Circular Crop with Active White Glowing Ring)
-                Box(
-                    modifier = Modifier
-                        .size(28.dp)
-                        .clip(CircleShape)
-                        .background(Color(0xFF272020))
-                        .border(
-                            width = if (closeness > 0.5f) 1.8.dp else 1.dp,
-                            color = if (closeness > 0.5f) Color.White else Color.White.copy(alpha = 0.25f),
-                            shape = CircleShape
-                        ),
-                    contentAlignment = Alignment.Center
-                ) {
-                    if (avatarBitmap != null) {
-                        Image(
-                            bitmap = avatarBitmap!!,
-                            contentDescription = "Profile Avatar",
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .alpha(0.65f + closeness * 0.35f),
-                            contentScale = ContentScale.Crop
-                        )
-                    } else if (userInitials.isNotBlank()) {
-                        Text(
-                            text = userInitials,
-                            color = Color.White.copy(alpha = 0.70f + closeness * 0.30f),
-                            fontSize = 11.sp,
-                            fontWeight = FontWeight.Bold
-                        )
-                    } else {
-                        Icon(
-                            imageVector = if (closeness > 0.5f) Icons.Filled.Settings else Icons.Outlined.Settings,
-                            contentDescription = "Settings",
-                            tint = Color.White.copy(alpha = 0.65f + closeness * 0.35f),
-                            modifier = Modifier.size(17.dp)
-                        )
-                    }
-                }
-            } else {
-                // Standard Tabs (Home, Library, Channels)
-                // Color smoothly interpolates from muted slate-silver to crisp pure white
-                val iconColor = lerp(
-                    Color(0xFF7E8088),
-                    Color.White,
-                    closeness
-                )
-
-                Icon(
-                    imageVector = if (closeness > 0.5f) item.selectedIcon else item.unselectedIcon,
-                    contentDescription = null,
-                    tint = iconColor,
-                    modifier = Modifier.size(if (closeness > 0.5f) 23.dp else 22.dp)
-                )
-            }
+            Icon(
+                imageVector = if (selected) item.selectedIcon else item.unselectedIcon,
+                contentDescription = item.label,
+                tint = tint,
+                modifier = Modifier.size(24.dp)
+            )
+            Text(
+                text = item.label,
+                color = tint,
+                fontSize = 11.sp,
+                fontWeight = if (selected) FontWeight.Medium else FontWeight.Normal,
+                maxLines = 1
+            )
         }
     }
 }

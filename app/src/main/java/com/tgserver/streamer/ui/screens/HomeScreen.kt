@@ -16,6 +16,17 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Icon
+import androidx.compose.ui.draw.shadow
+import androidx.compose.foundation.interaction.collectIsPressedAsState
+import androidx.compose.foundation.gestures.rememberDraggableState
+import androidx.compose.foundation.gestures.draggable
+import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.material.icons.filled.Star
+import androidx.compose.material.icons.outlined.Tv
+import androidx.compose.material.icons.outlined.Storage
+import androidx.compose.material.icons.outlined.Movie
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AutoAwesome
@@ -63,7 +74,12 @@ import java.io.File
 import java.util.Locale
 
 // Pixel Dot-Matrix Font (Exact match with Nothing / Canva design)
-private val NdotFont = FontFamily(Font(R.font.ndot))
+private val NdotFont = FontFamily(
+    Font(R.font.inter_regular, androidx.compose.ui.text.font.FontWeight.Normal),
+    Font(R.font.inter_medium, androidx.compose.ui.text.font.FontWeight.Medium),
+    Font(R.font.inter_semibold, androidx.compose.ui.text.font.FontWeight.SemiBold),
+    Font(R.font.inter_bold, androidx.compose.ui.text.font.FontWeight.Bold)
+)
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
@@ -178,68 +194,39 @@ fun HomeScreen(viewModel: MainAppViewModel) {
             .padding(top = 10.dp, bottom = 16.dp),
         verticalArrangement = Arrangement.spacedBy(22.dp)
     ) {
-        // TOP BRANDING HEADER (Compact, Premium & Flush Left-Aligned)
+        // TOP BRANDING HEADER (MysticFlix logo + welcome)
         Column(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 20.dp, vertical = 2.dp),
-            verticalArrangement = Arrangement.spacedBy(8.dp)
+                .padding(horizontal = 20.dp),
+            verticalArrangement = Arrangement.spacedBy(6.dp)
         ) {
-            // Top Row: Logo + NoxMedia Title (Compact & Elegant)
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(10.dp)
-            ) {
-                Image(
-                    painter = painterResource(id = R.drawable.noxmedia_icon_trans),
-                    contentDescription = "NoxMedia Logo",
-                    modifier = Modifier.size(24.dp),
-                    contentScale = ContentScale.Fit
-                )
-
-                Text(
-                    text = "MysticFlix",
-                    color = Color.White,
-                    fontSize = 20.sp,
-                    fontFamily = NdotFont,
-                    letterSpacing = 0.8.sp
-                )
-            }
-
-            // Sleek Minimalist Divider Line
-            HorizontalDivider(
-                color = Color(0xFF2D2525),
-                thickness = 1.dp,
-                modifier = Modifier.fillMaxWidth()
+            Image(
+                painter = painterResource(id = R.drawable.mysticflix_logo),
+                contentDescription = "MysticFlix Logo",
+                modifier = Modifier.fillMaxWidth(0.86f),
+                contentScale = ContentScale.FillWidth
             )
-
-            // User Info Row: Flush left-aligned with the exact start of the Logo
             val displayName = if (session.firstName.isNotBlank()) session.firstName else "Name"
-            val usernameDisplay = if (session.username.isNotBlank()) "@${session.username}" else "@USERNAME"
-
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
+            Row {
+                Text(
+                    text = "Welcome back, ",
+                    color = Color.White,
+                    fontFamily = FontFamily.Serif,
+                    fontSize = 24.sp
+                )
                 Text(
                     text = displayName,
-                    color = Color(0xFFD1D5DB),
-                    fontSize = 11.5.sp,
-                    fontWeight = FontWeight.Medium,
-                    letterSpacing = 0.2.sp
-                )
-                Text(
-                    text = "•",
-                    color = Color(0xFF6B7280),
-                    fontSize = 11.sp
-                )
-                Text(
-                    text = usernameDisplay,
-                    color = Color(0xFF8B909A),
-                    fontSize = 11.5.sp,
-                    letterSpacing = 0.2.sp
+                    color = Color(0xFFFF4552),
+                    fontFamily = FontFamily.Serif,
+                    fontSize = 24.sp
                 )
             }
+            Text(
+                text = "Your personal streaming hub",
+                color = Color(0xFFD4D4D8),
+                fontSize = 14.sp
+            )
         }
 
         // IN-APP UPDATE PROMPT BANNER
@@ -275,10 +262,10 @@ fun HomeScreen(viewModel: MainAppViewModel) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 20.dp)
-                .clip(RoundedCornerShape(20.dp))
+                .clip(RoundedCornerShape(28.dp))
                 .border(
-                    BorderStroke(1.dp, Color(0xFF312828)),
-                    shape = RoundedCornerShape(20.dp)
+                    BorderStroke(1.dp, Color(0xFF7A141C)),
+                    shape = RoundedCornerShape(28.dp)
                 )
                 .combinedClickable(
                     interactionSource = remember { MutableInteractionSource() },
@@ -297,8 +284,8 @@ fun HomeScreen(viewModel: MainAppViewModel) {
                         }
                     }
                 ),
-            shape = RoundedCornerShape(20.dp),
-            colors = CardDefaults.cardColors(containerColor = Color(0xFF241E1E))
+            shape = RoundedCornerShape(28.dp),
+            colors = CardDefaults.cardColors(containerColor = Color(0xFF12080A))
         ) {
             AnimatedContent(
                 targetState = telemetry.isRunning,
@@ -395,8 +382,8 @@ fun HomeScreen(viewModel: MainAppViewModel) {
                                 modifier = Modifier
                                     .fillMaxWidth()
                                     .padding(horizontal = 18.dp)
-                                    .background(Color(0xFF181313), shape = RoundedCornerShape(10.dp))
-                                    .border(BorderStroke(0.8.dp, Color(0xFF2E2626)), shape = RoundedCornerShape(10.dp))
+                                    .background(Color(0xFF0A0405), shape = RoundedCornerShape(10.dp))
+                                    .border(BorderStroke(0.8.dp, Color(0xFF3C1016)), shape = RoundedCornerShape(10.dp))
                                     .padding(horizontal = 16.dp, vertical = 9.dp),
                                 horizontalArrangement = Arrangement.SpaceBetween,
                                 verticalAlignment = Alignment.CenterVertically
@@ -451,11 +438,11 @@ fun HomeScreen(viewModel: MainAppViewModel) {
                         Box(
                             modifier = Modifier
                                 .fillMaxWidth()
-                                .background(Color(0xFF181313))
+                                .background(Color(0xFF0A0405))
                                 .border(
                                     width = 1.dp,
-                                    color = Color(0xFF2E2626),
-                                    shape = RoundedCornerShape(bottomStart = 20.dp, bottomEnd = 20.dp)
+                                    color = Color(0xFF3C1016),
+                                    shape = RoundedCornerShape(bottomStart = 28.dp, bottomEnd = 28.dp)
                                 )
                                 .clickable {
                                     haptic.performHapticFeedback(HapticFeedbackType.LongPress)
@@ -494,129 +481,55 @@ fun HomeScreen(viewModel: MainAppViewModel) {
             }
         }
 
-        // 3D COSMIC PURPLE LIBRARY WIDGET (Siri Waveform & Apple 3D Vibe)
+        // STATS CARD (Movies | Storage | Episodes <-> Shows, swipe the last column)
+        var showEpisodesStat by remember { mutableStateOf(true) }
+        val statDragState = rememberDraggableState { delta ->
+            if (delta < -6f) showEpisodesStat = false else if (delta > 6f) showEpisodesStat = true
+        }
         Box(
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(horizontal = 20.dp)
-                .clip(RoundedCornerShape(30.dp))
-                .background(
-                    Brush.linearGradient(
-                        colors = listOf(
-                            Color(0xFFFA5862), // Luminous lilac violet at top-left
-                            Color(0xFFDD242F), // Vibrant purple
-                            Color(0xFF981A22), // Deep royal violet
-                            Color(0xFF670E13)  // Cosmic dark plum at bottom-right
-                        ),
-                        start = Offset(0f, 0f),
-                        end = Offset.Infinite
-                    )
-                )
-                .border(
-                    BorderStroke(
-                        1.dp,
-                        Brush.verticalGradient(
-                            colors = listOf(
-                                Color(0x66FF8087), // Glass edge highlight
-                                Color(0x33FB515B), // Mid violet
-                                Color(0x1566050B)  // Subtle base shadow
-                            )
-                        )
-                    ),
-                    shape = RoundedCornerShape(30.dp)
-                )
-                .clickable {
-                    haptic.performHapticFeedback(HapticFeedbackType.LongPress)
-                    viewModel.selectTab(AppTab.LIBRARY)
-                }
-                .padding(horizontal = 22.dp, vertical = 20.dp)
+                .clip(RoundedCornerShape(28.dp))
+                .background(Brush.verticalGradient(listOf(Color(0xFF1E080B), Color(0xFF090304))))
+                .border(1.dp, Color(0xFF7A141C), RoundedCornerShape(28.dp))
+                .padding(vertical = 14.dp)
         ) {
-            Column(
-                modifier = Modifier.fillMaxWidth(),
-                verticalArrangement = Arrangement.spacedBy(16.dp)
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(IntrinsicSize.Min),
+                verticalAlignment = Alignment.CenterVertically
             ) {
-                // Top Row: "Library" title + Chevron Arrow
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(
-                        text = "Library",
-                        color = Color(0xFFFF8087),
-                        fontSize = 14.sp,
-                        fontWeight = FontWeight.Medium,
-                        letterSpacing = 0.3.sp
-                    )
-
-                    Text(
-                        text = "›",
-                        color = Color(0xCCFF8087),
-                        fontSize = 20.sp,
-                        fontWeight = FontWeight.Light
-                    )
-                }
-
-                // Middle Row: Big Dot-Matrix Content Count + Animated Siri Waveform
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Row(
-                        verticalAlignment = Alignment.Bottom,
-                        horizontalArrangement = Arrangement.spacedBy(6.dp)
-                    ) {
-                        Text(
-                            text = "$contentFilesCount",
-                            color = Color.White,
-                            fontFamily = NdotFont,
-                            fontSize = 32.sp,
-                            lineHeight = 32.sp
-                        )
-                        Text(
-                            text = "files",
-                            color = Color(0xFFFF8087),
-                            fontSize = 13.5.sp,
-                            fontWeight = FontWeight.Normal,
-                            modifier = Modifier.padding(bottom = 4.dp)
-                        )
-                    }
-
-                    // Smooth Siri Harmonic Waveform (Low-overhead Canvas animation)
-                    SiriWaveform(
-                        modifier = Modifier
-                            .width(115.dp)
-                            .height(42.dp)
-                    )
-                }
-
-                // Bottom Row: Detailed Category Breakdown + Total Storage Size
-                Row(
-                    modifier = Modifier.fillMaxWidth(),
-                    horizontalArrangement = Arrangement.SpaceBetween,
-                    verticalAlignment = Alignment.CenterVertically
-                ) {
-                    Text(
-                        text = "$moviesCount Movies  •  $showsCount Shows  •  $episodesCount Ep",
-                        color = Color(0xFFFF8087),
-                        fontSize = 11.5.sp,
-                        fontWeight = FontWeight.Normal,
-                        maxLines = 1,
-                        overflow = TextOverflow.Ellipsis,
-                        modifier = Modifier
-                            .weight(1f)
-                            .padding(end = 8.dp)
-                    )
-
-                    Text(
-                        text = totalServerSizeFormatted,
-                        color = Color.White,
-                        fontFamily = NdotFont,
-                        fontSize = 12.sp,
-                        maxLines = 1
-                    )
-                }
+                StatColumn(
+                    icon = Icons.Outlined.Movie,
+                    value = "$moviesCount",
+                    label = "Movies",
+                    modifier = Modifier
+                        .weight(1f)
+                        .clickable { viewModel.selectTab(AppTab.LIBRARY) }
+                )
+                Box(modifier = Modifier.width(1.dp).fillMaxHeight().background(Color(0xFF7A141C)))
+                StatColumn(
+                    icon = Icons.Outlined.Storage,
+                    value = totalServerSizeFormatted,
+                    label = "Storage",
+                    modifier = Modifier
+                        .weight(1f)
+                        .clickable { viewModel.selectTab(AppTab.LIBRARY) }
+                )
+                Box(modifier = Modifier.width(1.dp).fillMaxHeight().background(Color(0xFF7A141C)))
+                StatColumn(
+                    icon = Icons.Outlined.Tv,
+                    value = if (showEpisodesStat) "$episodesCount" else "$showsCount",
+                    label = if (showEpisodesStat) "Episodes" else "Shows",
+                    dots = 2,
+                    activeDot = if (showEpisodesStat) 0 else 1,
+                    modifier = Modifier
+                        .weight(1f)
+                        .draggable(statDragState, Orientation.Horizontal)
+                        .clickable { showEpisodesStat = !showEpisodesStat }
+                )
             }
         }
 
@@ -633,13 +546,23 @@ fun HomeScreen(viewModel: MainAppViewModel) {
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Text(
-                        text = "Recently Added",
-                        color = Color.White,
-                        fontFamily = NdotFont,
-                        fontSize = 14.sp,
-                        letterSpacing = 0.8.sp
-                    )
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.spacedBy(8.dp)
+                    ) {
+                        Icon(
+                            imageVector = Icons.Filled.Star,
+                            contentDescription = null,
+                            tint = Color(0xFFE11D2E),
+                            modifier = Modifier.size(18.dp)
+                        )
+                        Text(
+                            text = "Recently Added",
+                            color = Color.White,
+                            fontWeight = FontWeight.Medium,
+                            fontSize = 16.sp
+                        )
+                    }
 
                     Text(
                         text = "view all →",
@@ -777,23 +700,105 @@ fun HomeScreen(viewModel: MainAppViewModel) {
 }
 
 @Composable
+private fun StatColumn(
+    icon: ImageVector,
+    value: String,
+    label: String,
+    modifier: Modifier = Modifier,
+    dots: Int = 0,
+    activeDot: Int = 0
+) {
+    Column(
+        modifier = modifier.padding(vertical = 4.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.spacedBy(4.dp)
+    ) {
+        Icon(
+            imageVector = icon,
+            contentDescription = null,
+            tint = Color(0xFFFF4552),
+            modifier = Modifier.size(22.dp)
+        )
+        Text(
+            text = value,
+            color = Color.White,
+            fontSize = 22.sp,
+            fontWeight = FontWeight.SemiBold,
+            maxLines = 1
+        )
+        Text(text = label, color = Color(0xFFA1A1AA), fontSize = 12.sp)
+        if (dots > 0) {
+            Row(horizontalArrangement = Arrangement.spacedBy(5.dp)) {
+                repeat(dots) { i ->
+                    Box(
+                        modifier = Modifier
+                            .size(5.dp)
+                            .clip(CircleShape)
+                            .background(if (i == activeDot) Color.White else Color(0xFF50505A))
+                    )
+                }
+            }
+        } else {
+            Spacer(modifier = Modifier.height(5.dp))
+        }
+    }
+}
+
+@Composable
+private fun StatCard(label: String, value: String, modifier: Modifier = Modifier) {
+    Column(
+        modifier = modifier
+            .clip(RoundedCornerShape(24.dp))
+            .border(1.dp, BorderSilver, RoundedCornerShape(24.dp))
+            .padding(horizontal = 20.dp, vertical = 16.dp),
+        verticalArrangement = Arrangement.spacedBy(4.dp)
+    ) {
+        Text(
+            text = label,
+            color = TextSecondary,
+            fontSize = 12.sp,
+            fontWeight = FontWeight.SemiBold,
+            letterSpacing = 1.6.sp
+        )
+        Text(
+            text = value,
+            color = Color.White,
+            fontSize = 30.sp,
+            fontWeight = FontWeight.Bold,
+            maxLines = 1
+        )
+    }
+}
+
+@Composable
 private fun RecentMediaCard(
     group: MediaGroup,
     onClick: () -> Unit
 ) {
+    val interaction = remember { MutableInteractionSource() }
+    val pressed by interaction.collectIsPressedAsState()
+    val posterShape = RoundedCornerShape(3.dp)
     Column(
         modifier = Modifier
             .width(114.dp)
-            .clip(RoundedCornerShape(14.dp))
-            .clickable { onClick() },
+            .clickable(interactionSource = interaction, indication = null) { onClick() },
         verticalArrangement = Arrangement.spacedBy(6.dp)
     ) {
         Box(
             modifier = Modifier
                 .width(114.dp)
                 .height(171.dp)
-                .clip(RoundedCornerShape(14.dp))
-                .border(BorderStroke(1.dp, Color(0xFF312828)), RoundedCornerShape(14.dp))
+                .shadow(
+                    elevation = if (pressed) 18.dp else 0.dp,
+                    shape = posterShape,
+                    ambientColor = Color(0xFFFF4552),
+                    spotColor = Color(0xFFFF4552)
+                )
+                .clip(posterShape)
+                .border(
+                    BorderStroke(if (pressed) 2.dp else 1.dp, if (pressed) Color(0xFFFF4552) else Color(0xFF7A141C)),
+                    posterShape
+                )
         ) {
             RemoteImage(
                 url = group.posterUrl,
@@ -808,15 +813,15 @@ private fun RecentMediaCard(
                     modifier = Modifier
                         .align(Alignment.BottomStart)
                         .padding(5.dp)
-                        .clip(RoundedCornerShape(5.dp))
-                        .background(Color(0xFFAB1E26).copy(alpha = 0.85f))
-                        .padding(horizontal = 5.dp, vertical = 2.dp)
+                        .clip(RoundedCornerShape(6.dp))
+                        .background(Color(0xFFBE1222).copy(alpha = 0.92f))
+                        .padding(horizontal = 6.dp, vertical = 2.dp)
                 ) {
                     Text(
                         text = "${group.distinctEpisodeCount} EPS",
                         color = Color.White,
-                        fontFamily = NdotFont,
-                        fontSize = 8.5.sp
+                        fontWeight = FontWeight.SemiBold,
+                        fontSize = 9.sp
                     )
                 }
             }

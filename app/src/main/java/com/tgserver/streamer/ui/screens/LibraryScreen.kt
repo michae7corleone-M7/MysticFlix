@@ -100,7 +100,12 @@ import java.util.Locale
 import java.util.concurrent.TimeUnit
 
 // Authentic Nothing Ndot Dot-Matrix Font
-private val NdotFont = FontFamily(Font(R.font.ndot))
+private val NdotFont = FontFamily(
+    Font(R.font.inter_regular, androidx.compose.ui.text.font.FontWeight.Normal),
+    Font(R.font.inter_medium, androidx.compose.ui.text.font.FontWeight.Medium),
+    Font(R.font.inter_semibold, androidx.compose.ui.text.font.FontWeight.SemiBold),
+    Font(R.font.inter_bold, androidx.compose.ui.text.font.FontWeight.Bold)
+)
 
 // Smart poster URL optimizer: seamlessly upgrades lower resolution URLs from TMDB/TVDB/Kitsu
 // so existing and incoming library items load crystal clear HD posters without manual database re-scans.
